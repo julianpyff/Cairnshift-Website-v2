@@ -1,0 +1,1 @@
+{"nodes":[{"id":"src/screens/HomeEdited/HomeEdited.tsx","label":"HomeEdited","routes":["/"],"type":"screen","dataModelId":"35:1476","isRoot":true},{"id":"src/screens/Phases/Phases.tsx","label":"Phases","routes":["/journey"],"type":"screen"},{"id":"src/screens/CaseStudy/CaseStudy.tsx","label":"CaseStudy","routes":["/case-studies"],"type":"screen"}],"edges":[]}
