@@ -14,25 +14,32 @@ export const Section = (): JSX.Element => {
           the right fit.
         </p>
 
-        <div className="inline-flex min-w-24 items-center justify-center gap-6 pl-6 pr-1 py-1 relative flex-[0_0_auto] bg-[#e2e2e2] rounded-[56px]">
-          <div className="relative flex-1 font-medium-text-base font-[number:var(--medium-text-base-font-weight)] text-[#102124] text-[length:var(--medium-text-base-font-size)] text-center tracking-[var(--medium-text-base-letter-spacing)] leading-[var(--medium-text-base-line-height)] [font-style:var(--medium-text-base-font-style)]">
-            Book a Blueprint Call
-          </div>
+        <a
+          href="https://cal.com/frank-lautenschutz-cq6op4"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="no-underline"
+        >
+          <div className="inline-flex min-w-24 items-center justify-center gap-6 pl-6 pr-1 py-1 relative flex-[0_0_auto] bg-[#e2e2e2] rounded-[56px] cursor-pointer transition-all hover:bg-white">
+            <div className="relative flex-1 font-medium-text-base font-[number:var(--medium-text-base-font-weight)] text-[#102124] text-[length:var(--medium-text-base-font-size)] text-center tracking-[var(--medium-text-base-letter-spacing)] leading-[var(--medium-text-base-line-height)] [font-style:var(--medium-text-base-font-style)]">
+              Book a Blueprint Call
+            </div>
 
-          <div className="relative flex-[0_0_auto] inline-flex items-start">
-            <Master
-              className="!rounded-[48px] !justify-center !flex-[0_0_auto] !p-3.5 !left-[unset] !bg-white !top-[unset]"
-              hasDiv={false}
-              override={
-                <ArrowForward
-                  arrowForward="https://c.animaapp.com/Gyeak8sQ/img/arrow-forward-13.svg"
-                  className="!h-5 !relative !left-[unset] !w-5 !top-[unset]"
-                />
-              }
-              visible={false}
-            />
+            <div className="relative flex-[0_0_auto] inline-flex items-start">
+              <Master
+                className="!rounded-[48px] !justify-center !flex-[0_0_auto] !p-3.5 !left-[unset] !bg-white !top-[unset]"
+                hasDiv={false}
+                override={
+                  <ArrowForward
+                    arrowForward="https://c.animaapp.com/Gyeak8sQ/img/arrow-forward-13.svg"
+                    className="!h-5 !relative !left-[unset] !w-5 !top-[unset]"
+                  />
+                }
+                visible={false}
+              />
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

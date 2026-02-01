@@ -1,4 +1,10 @@
+import { Link } from "react-router-dom";
+
 export const Container = (): JSX.Element => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="relative max-w-[1620px] w-full h-[780px] bg-[#15353c] rounded-[16px_16px_0px_0px]">
       <div className="absolute w-[calc(100%_-_112px)] top-[60px] left-12 h-[490px]">
@@ -51,25 +57,41 @@ export const Container = (): JSX.Element => {
             </div>
 
             <div className="flex flex-col gap-2 self-stretch w-full items-start relative flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                About us
-              </div>
+              <Link to="/" className="no-underline">
+                <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  About us
+                </div>
+              </Link>
 
-              <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                The Journey
-              </div>
+              <Link to="/journey" className="no-underline">
+                <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  The Journey
+                </div>
+              </Link>
 
-              <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                Proven Results
-              </div>
+              <Link to="/case-studies" className="no-underline">
+                <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  Proven Results
+                </div>
+              </Link>
 
-              <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                Book a Blueprint
-              </div>
+              <a
+                href="https://cal.com/frank-lautenschutz-cq6op4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline"
+              >
+                <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  Book a Blueprint
+                </div>
+              </a>
             </div>
           </div>
 
-          <div className="absolute top-px left-[498px] -rotate-90 inline-flex items-start">
+          <div
+            className="absolute top-px left-[498px] -rotate-90 inline-flex items-start cursor-pointer transition-opacity hover:opacity-80"
+            onClick={scrollToTop}
+          >
             <div className="inline-flex items-center justify-center gap-2.5 p-3.5 relative flex-[0_0_auto] bg-[#234850] rounded-[48px]">
               <img
                 className="relative w-5 h-5 rotate-90"

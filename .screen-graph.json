@@ -1,1 +1,365 @@
-{"nodes":[{"id":"src/screens/HomeEdited/HomeEdited.tsx","label":"HomeEdited","routes":["/"],"type":"screen","dataModelId":"35:1476","isRoot":true},{"id":"src/screens/Phases/Phases.tsx","label":"Phases","routes":["/journey"],"type":"screen"},{"id":"src/screens/CaseStudy/CaseStudy.tsx","label":"CaseStudy","routes":["/case-studies"],"type":"screen"}],"edges":[]}
+{
+  "nodes": [
+    {
+      "id": "src/screens/HomeEdited/HomeEdited.tsx",
+      "label": "HomeEdited",
+      "routes": [
+        "/"
+      ],
+      "dataModelId": "35:1476",
+      "isRoot": true
+    },
+    {
+      "id": "src/screens/Phases/Phases.tsx",
+      "label": "Phases",
+      "routes": [
+        "/journey"
+      ]
+    },
+    {
+      "id": "src/screens/CaseStudy/CaseStudy.tsx",
+      "label": "CaseStudy",
+      "routes": [
+        "/case-studies"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "src/components/Header/Header.tsx:10:6-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n        <img\n          className=\"relative w-40 h-[24.39px] cursor-pointer\"\n          alt=\"CairnShift Logo\"\n          src=\"https://c.animaapp.com/Gyeak8sQ/img/group-83324530@2x.png\"\n        />\n      </Link>",
+          "line": 10,
+          "endLine": 16,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:21:12-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    HOME\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 21,
+          "endLine": 33,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:37:12-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/journey\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    THE JOURNEY\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 37,
+          "endLine": 49,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:53:12-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/case-studies\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    CASE STUDIES\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 53,
+          "endLine": 65,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/HomeEdited/sections/Container/Container.tsx:58:14-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n                <div className=\"relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  About us\n                </div>\n              </Link>",
+          "line": 58,
+          "endLine": 62,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/HomeEdited/sections/Container/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/HomeEdited/sections/Container/Container.tsx:64:14-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n                <div className=\"self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] relative hover:text-white cursor-pointer transition-colors\">\n                  The Journey\n                </div>\n              </Link>",
+          "line": 64,
+          "endLine": 68,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/HomeEdited/sections/Container/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/HomeEdited/sections/Container/Container.tsx:70:14-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n                <div className=\"relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  Proven Results\n                </div>\n              </Link>",
+          "line": 70,
+          "endLine": 74,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/HomeEdited/sections/Container/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:10:6-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n        <img\n          className=\"relative w-40 h-[24.39px] cursor-pointer\"\n          alt=\"CairnShift Logo\"\n          src=\"https://c.animaapp.com/Gyeak8sQ/img/group-83324530@2x.png\"\n        />\n      </Link>",
+          "line": 10,
+          "endLine": 16,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:21:12-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    HOME\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 21,
+          "endLine": 33,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:37:12-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/journey\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    THE JOURNEY\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 37,
+          "endLine": 49,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:53:12-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/case-studies\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    CASE STUDIES\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 53,
+          "endLine": 65,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Phases/sections/Container.tsx:56:14-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/Phases/Phases.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n                <div className=\"relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  About us\n                </div>\n              </Link>",
+          "line": 56,
+          "endLine": 60,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Phases/sections/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Phases/sections/Container.tsx:62:14-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/Phases/Phases.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n                <div className=\"relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  The Journey\n                </div>\n              </Link>",
+          "line": 62,
+          "endLine": 66,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Phases/sections/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Phases/sections/Container.tsx:68:14-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/Phases/Phases.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n                <div className=\"relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  Proven Results\n                </div>\n              </Link>",
+          "line": 68,
+          "endLine": 72,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Phases/sections/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:10:6-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n        <img\n          className=\"relative w-40 h-[24.39px] cursor-pointer\"\n          alt=\"CairnShift Logo\"\n          src=\"https://c.animaapp.com/Gyeak8sQ/img/group-83324530@2x.png\"\n        />\n      </Link>",
+          "line": 10,
+          "endLine": 16,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:21:12-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    HOME\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 21,
+          "endLine": 33,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:37:12-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/journey\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    THE JOURNEY\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 37,
+          "endLine": 49,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Header/Header.tsx:53:12-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/HomeEdited/HomeEdited.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n              <div\n                className={`inline-flex items-center px-[17px] py-[12.5px] relative flex-[0_0_auto] rounded-lg ${\n                  isActive(\"/case-studies\") ? \"bg-[#f7f7f5]\" : \"\"\n                }`}\n              >\n                <div className=\"inline-flex flex-col items-end relative flex-[0_0_auto]\">\n                  <div className=\"relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-normal text-[#222f30] text-sm text-right tracking-[0] leading-[14px] whitespace-nowrap\">\n                    CASE STUDIES\n                  </div>\n                </div>\n              </div>\n            </Link>",
+          "line": 53,
+          "endLine": 65,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/components/Header/Header.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CaseStudy/sections/Container.tsx:56:14-to-src/screens/HomeEdited/HomeEdited.tsx",
+      "source": "src/screens/CaseStudy/CaseStudy.tsx",
+      "target": "src/screens/HomeEdited/HomeEdited.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"no-underline\">\n                <div className=\"relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  About us\n                </div>\n              </Link>",
+          "line": 56,
+          "endLine": 60,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/CaseStudy/sections/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CaseStudy/sections/Container.tsx:62:14-to-src/screens/Phases/Phases.tsx",
+      "source": "src/screens/CaseStudy/CaseStudy.tsx",
+      "target": "src/screens/Phases/Phases.tsx",
+      "data": {
+        "viaRoute": "/journey",
+        "trigger": {
+          "element": "<Link to=\"/journey\" className=\"no-underline\">\n                <div className=\"self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] relative hover:text-white cursor-pointer transition-colors\">\n                  The Journey\n                </div>\n              </Link>",
+          "line": 62,
+          "endLine": 66,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/CaseStudy/sections/Container.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CaseStudy/sections/Container.tsx:68:14-to-src/screens/CaseStudy/CaseStudy.tsx",
+      "source": "src/screens/CaseStudy/CaseStudy.tsx",
+      "target": "src/screens/CaseStudy/CaseStudy.tsx",
+      "data": {
+        "viaRoute": "/case-studies",
+        "trigger": {
+          "element": "<Link to=\"/case-studies\" className=\"no-underline\">\n                <div className=\"relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors\">\n                  Proven Results\n                </div>\n              </Link>",
+          "line": 68,
+          "endLine": 72,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/CaseStudy/sections/Container.tsx"
+        }
+      }
+    }
+  ]
+}

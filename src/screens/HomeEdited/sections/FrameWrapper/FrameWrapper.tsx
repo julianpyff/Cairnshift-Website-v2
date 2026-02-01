@@ -1,3 +1,4 @@
+import { ArrowBack } from "../../../../components/ArrowBack";
 import { ArrowForward } from "../../../../components/ArrowForward";
 import { LightDarkNoSize } from "../../../../components/LightDarkNoSize";
 import { Master } from "../../../../components/Master";
@@ -23,9 +24,9 @@ export const FrameWrapper = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="relative w-[1321px] h-[456px] ml-[-0.50px] mr-[-0.50px] overflow-x-scroll">
-        <div className="inline-flex h-[456px] items-start gap-4 relative">
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#15353c] rounded-2xl overflow-hidden">
+      <div className="relative w-[calc(100%_+_120px)] -ml-[60px] -mr-[60px] overflow-x-auto no-scrollbar">
+        <div className="inline-flex items-start gap-4 relative px-[60px]">
+          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#15353c] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
             <div className="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
               <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
                 Knowledge
@@ -37,9 +38,9 @@ export const FrameWrapper = (): JSX.Element => {
               />
             </div>
 
-            <p className="relative flex items-end justify-center self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
-              Internal docs, CRM data, and market research enriched with live
-              GTM signals. A feedback loop between strategy and execution that
+            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
+              Internal docs, CRM data, and market research enriched with live GTM
+              signals. A feedback loop between strategy and execution that
               improves with every interaction.
             </p>
 
@@ -50,15 +51,33 @@ export const FrameWrapper = (): JSX.Element => {
             />
           </div>
 
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#849194] rounded-2xl overflow-hidden">
-            <div className="relative flex items-end justify-center self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-5xl tracking-[-1.00px] leading-[48px]">
+          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#e2e2e2] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
+            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
+              Content
+            </div>
+
+            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-xl tracking-[-0.50px] leading-[normal]">
+              Live GTM insights guide high-impact materials. Interactive lead
+              magnets create high-intent prospects, and validated messaging boosts
+              credibility.
+            </p>
+
+            <Master
+              className="!rounded-[11.17px] !right-8 !gap-[13.96px] !justify-end !p-[19.54px] !items-start !absolute !left-[unset] !bg-[#d1d1d1] !top-8"
+              hasDiv={false}
+              visible={false}
+            />
+          </div>
+
+          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#849194] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
+            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
               Activation
             </div>
 
-            <p className="relative flex items-end justify-center self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
-              Real-time signals like intent data and sales triggers combined
-              with prospect research guide when and how to reach out. Outreach
-              happens when there&#39;s a reason.
+            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
+              Real-time signals like intent data and sales triggers combined with
+              prospect research guide when and how to reach out. Outreach happens
+              when there&apos;s a reason.
             </p>
 
             <Master
@@ -68,21 +87,27 @@ export const FrameWrapper = (): JSX.Element => {
             />
           </div>
 
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-white rounded-2xl overflow-hidden">
-            <div className="relative flex items-end justify-center self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-5xl tracking-[-1.00px] leading-[48px]">
+          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-white rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
+            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
               Revenue
             </div>
 
-            <p className="relative flex items-end justify-center self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-xl tracking-[-0.50px] leading-[normal]">
-              AI agents handle replies, call prep, and follow-ups. Sales calls
-              get analyzed to refine playbooks and optimize pipeline, turning
-              every conversation into a learning opportunity.
+            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-xl tracking-[-0.50px] leading-[normal]">
+              AI agents handle replies, call prep, and follow-ups. Sales calls get
+              analyzed to refine playbooks and optimize pipeline, turning every
+              conversation into a learning opportunity.
             </p>
 
             <Master
-              className="!rounded-[10.67px] !right-8 !gap-[13.33px] !justify-center !p-[18.67px] !absolute !left-[unset] !bg-[#ee9d2b] !top-8"
+              className="!rounded-[10.67px] !right-8 !gap-[13.33px] !justify-center !p-[18.67px] !absolute !left-[unset] !bg-[#f3f3f3] !top-8"
               hasDiv={false}
               visible={false}
+              override={
+                <ArrowBack
+                  className="!h-5 !relative !left-[unset] !w-5 !top-[unset] invert"
+                  arrowBack="https://c.animaapp.com/Gyeak8sQ/img/arrow-back.svg"
+                />
+              }
             />
           </div>
         </div>

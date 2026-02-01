@@ -1,9 +1,17 @@
+import { Link } from "react-router-dom";
+import { ArrowForward } from "../../../components/ArrowForward";
+import { Master } from "../../../components/Master";
+
 export const Container = (): JSX.Element => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="relative max-w-[1620px] w-full h-[780px] bg-[#15353c] rounded-[16px_16px_0px_0px]">
       <div className="absolute w-[calc(100%_-_112px)] top-[60px] left-12 h-[490px]">
         <div className="flex flex-col w-[calc(100%_-_684px)] items-start gap-6 absolute -top-px left-3">
-          <p className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-[42px] tracking-[-0.84px] leading-[50.4px]">
+          <p className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-[42px] tracking-[-0.84px] leading-[50.4px]">
             Centralise Your Knowledge.
             <br />
             Consistent Sales Execution.
@@ -16,7 +24,7 @@ export const Container = (): JSX.Element => {
           </p>
         </div>
 
-        <div className="absolute top-0 left-[786px] w-[546px] h-[154px]">
+        <div className="absolute w-[calc(100%_-_782px)] top-0 left-[786px] h-[154px]">
           <div className="flex flex-col w-[calc(100%_-_353px)] items-start gap-5 pl-5 pr-0 py-0 absolute top-px left-0 border-l [border-left-style:solid] border-[#ffffff33]">
             <div className="flex flex-col w-[232px] items-start relative flex-[0_0_auto] mr-[-60.00px]">
               <div className="w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-medium text-[#ee9d2b] text-base tracking-[0] leading-[14px] whitespace-nowrap relative">
@@ -51,32 +59,52 @@ export const Container = (): JSX.Element => {
             </div>
 
             <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                About us
-              </div>
+              <Link to="/" className="no-underline">
+                <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  About us
+                </div>
+              </Link>
 
-              <div className="self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] relative">
-                The Journey
-              </div>
+              <Link to="/journey" className="no-underline">
+                <div className="self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] relative hover:text-white cursor-pointer transition-colors">
+                  The Journey
+                </div>
+              </Link>
 
-              <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                Proven Results
-              </div>
+              <Link to="/case-studies" className="no-underline">
+                <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  Proven Results
+                </div>
+              </Link>
 
-              <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px]">
-                Book a Blueprint
-              </div>
+              <a
+                href="https://cal.com/frank-lautenschutz-cq6op4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline"
+              >
+                <div className="relative self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-base tracking-[0] leading-[23.0px] hover:text-white cursor-pointer transition-colors">
+                  Book a Blueprint
+                </div>
+              </a>
             </div>
           </div>
 
-          <div className="inline-flex items-start absolute top-px left-[498px] -rotate-90">
-            <div className="inline-flex items-center justify-center gap-2.5 p-3.5 relative flex-[0_0_auto] bg-[#234850] rounded-[48px]">
-              <img
-                className="rotate-90 relative w-5 h-5"
-                alt="Arrow forward"
-                src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/arrow-forward-1.svg"
-              />
-            </div>
+          <div
+            className="absolute top-px left-[498px] rotate-[-90.00deg] inline-flex items-start cursor-pointer transition-opacity hover:opacity-80"
+            onClick={scrollToTop}
+          >
+            <Master
+              className="!rounded-[48px] !justify-center !flex-[0_0_auto] !p-3.5 !left-[unset] !bg-[#234850] !top-[unset]"
+              hasDiv={false}
+              override={
+                <ArrowForward
+                  arrowForward="https://c.animaapp.com/Gyeak8sQ/img/arrow-forward-14.svg"
+                  className="!h-5 !relative !rotate-[90.00deg] !left-[unset] !w-5 !top-[unset]"
+                />
+              }
+              visible={false}
+            />
           </div>
         </div>
       </div>
@@ -85,12 +113,12 @@ export const Container = (): JSX.Element => {
         <img
           className="relative w-[1360px] h-[207.32px]"
           alt="Group"
-          src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/group-83324530-1.png"
+          src="https://c.animaapp.com/Gyeak8sQ/img/group-83324530-1.png"
         />
 
         <div className="flex flex-col items-end pl-0 pr-[681.72px] py-0 relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-            <p className="relative self-stretch mt-[-1.01px] [font-family:'DM_Mono',Helvetica] font-medium text-[#ffffff] text-base tracking-[0] leading-[14px]">
+            <p className="relative self-stretch mt-[-1.01px] [font-family:'DM_Mono',Helvetica] font-medium text-white text-base tracking-[0] leading-[14px]">
               © 2026 CAIRNSHIFT. ALL RIGHTS RESERVED.
             </p>
           </div>
