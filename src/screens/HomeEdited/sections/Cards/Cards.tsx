@@ -3,11 +3,6 @@ import { ArrowForward } from "../../../../components/ArrowForward";
 import { Master } from "../../../../components/Master";
 
 export const Cards = (): JSX.Element => {
-  const scrollToCase = (caseNumber: number) => {
-    // Navigate to case studies page with hash
-    window.location.href = `/case-studies#case-${caseNumber}`;
-  };
-
   return (
     <div className="flex flex-col w-full self-stretch items-start gap-[88px] px-[60px] py-[120px] relative flex-[0_0_auto] bg-[#f3f3f3]">
       <div className="inline-flex flex-col items-start gap-[var(--tokens-spacing-spacing-64)] relative flex-[0_0_auto]">
@@ -31,12 +26,8 @@ export const Cards = (): JSX.Element => {
         <div className="inline-flex items-start gap-4 relative px-[60px]">
           {/* Case Study 01 - Mourik */}
           <Link
-            to="/case-studies#case-1"
+            to="/case-studies"
             className="no-underline"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToCase(1);
-            }}
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
               <div className="relative self-stretch w-full h-[302px] rounded-lg bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272.svg)] bg-cover bg-[50%_50%]" />
@@ -71,12 +62,8 @@ export const Cards = (): JSX.Element => {
 
           {/* Case Study 02 - Blits.ai */}
           <Link
-            to="/case-studies#case-2"
+            to="/case-studies"
             className="no-underline"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToCase(2);
-            }}
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
               <div className="bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272-1.svg)] relative self-stretch w-full h-[302px] rounded-lg bg-cover bg-[50%_50%]" />

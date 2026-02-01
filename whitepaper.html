@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./public/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="./public/favicon.ico" />
     <title>CairnShift Whitepaper - Organise Your Sales Fundament to Consistently Create New Business</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +22,17 @@
         :root {
             --color-primary: #15353c;
             --color-accent: #ee9d2b;
+            --color-accent-muted: #7a9ca5;
+            --color-green: #4a6b5f;
+            --color-green-light: #6b8b7e;
             --color-text: #0d0d0d;
             --color-text-secondary: #5e5e5e;
             --color-text-muted: #868686;
             --color-bg: #ffffff;
             --color-bg-light: #f3f3f3;
+            --color-bg-dark: #15353c;
+            --color-gray-medium: #9ca3af;
+            --color-gray-light: #e5e7eb;
             --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-mono: 'DM Mono', 'Courier New', monospace;
         }
@@ -33,7 +40,7 @@
         body {
             font-family: var(--font-sans);
             color: var(--color-text);
-            background: var(--color-bg);
+            background: #fafafa;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -46,10 +53,12 @@
             padding: 20mm;
             margin: 0 auto 10mm;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             page-break-after: always;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
         .page:last-child {
@@ -79,8 +88,8 @@
             font-size: 12px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--color-text-secondary);
+            letter-spacing: 1px;
+            color: var(--color-green);
             margin-bottom: 16px;
         }
 
@@ -106,9 +115,9 @@
         h2 {
             font-family: var(--font-sans);
             font-size: 40px;
-            font-weight: 400;
-            line-height: 40px;
-            letter-spacing: 0;
+            font-weight: 500;
+            line-height: 44px;
+            letter-spacing: -1.5px;
             color: var(--color-text);
             margin-top: 48px;
             margin-bottom: 24px;
@@ -128,10 +137,10 @@
         h4 {
             font-family: var(--font-sans);
             font-size: 24px;
-            font-weight: 500;
+            font-weight: 600;
             line-height: 32px;
             letter-spacing: -0.5px;
-            color: var(--color-text);
+            color: var(--color-primary);
             margin-top: 32px;
             margin-bottom: 16px;
         }
@@ -161,20 +170,23 @@
             font-weight: 500;
         }
 
-        /* Accent Indicators */
+        /* Bold Accent Indicators */
         .section-indicator {
             display: inline-flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 24px;
             margin-top: 32px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-light) 100%);
+            border-radius: 8px;
         }
 
         .section-indicator::before {
             content: '';
             width: 8px;
             height: 8px;
-            background: var(--color-accent);
+            background: white;
             border-radius: 2px;
             flex-shrink: 0;
         }
@@ -184,9 +196,9 @@
             font-size: 16px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0;
+            letter-spacing: 1px;
             line-height: 14px;
-            color: var(--color-primary);
+            color: white;
         }
 
         /* Lists */
@@ -202,17 +214,18 @@
             line-height: 25px;
             letter-spacing: -0.5px;
             color: var(--color-text-secondary);
-            margin-bottom: 12px;
-            padding-left: 24px;
+            margin-bottom: 16px;
+            padding-left: 32px;
             position: relative;
         }
 
         ul li::before {
-            content: '•';
+            content: '→';
             position: absolute;
             left: 8px;
-            color: var(--color-accent);
+            color: var(--color-accent-muted);
             font-weight: bold;
+            font-size: 20px;
         }
 
         ul li strong {
@@ -223,56 +236,97 @@
         /* Dividers */
         hr {
             border: none;
-            border-top: 1px solid rgba(34, 47, 48, 0.1);
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-gray-light) 0%, transparent 100%);
             margin: 40px 0;
         }
 
-        /* Highlighted Results */
+        /* Bold Result Boxes */
         .result-box {
-            background: var(--color-bg-light);
-            border-left: 4px solid var(--color-accent);
-            padding: 24px;
-            margin: 24px 0;
-            border-radius: 4px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a4550 100%);
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--color-green-light);
         }
 
         .result-box p {
             margin-bottom: 0;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
         }
 
-        /* Proof Section */
+        .result-box strong {
+            color: var(--color-green-light);
+        }
+
+        /* Proof Section - Bold Cards */
         .proof-item {
+            background: var(--color-bg-light);
+            padding: 20px 24px;
             margin-bottom: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .proof-item:hover {
+            transform: translateX(4px);
+        }
+
+        .proof-item p {
+            margin: 0;
         }
 
         .proof-item strong {
-            color: var(--color-text);
+            color: var(--color-primary);
             font-weight: 600;
+            font-size: 20px;
         }
 
         /* Contact Info */
         .contact-section {
             margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(34, 47, 48, 0.1);
+            padding: 32px;
+            background: var(--color-bg-light);
+            border-radius: 12px;
+            border: 2px solid var(--color-green);
         }
 
         .contact-section h3 {
             margin-top: 0;
+            color: var(--color-primary);
         }
 
         .contact-section p {
-            font-size: 16px;
+            font-size: 18px;
+            color: var(--color-text);
         }
 
         .contact-section a {
             color: var(--color-primary);
             text-decoration: none;
-            border-bottom: 1px solid var(--color-accent);
+            border-bottom: 2px solid var(--color-green);
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .contact-section a:hover {
-            color: var(--color-accent);
+            color: var(--color-green);
+            border-bottom-color: var(--color-primary);
         }
 
         /* Footer */
@@ -285,42 +339,70 @@
             font-weight: 500;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            border-top: 1px solid rgba(34, 47, 48, 0.05);
+            border-top: 2px solid var(--color-gray-light);
         }
 
-        /* Phase Styling */
+        /* Bold Phase Styling */
         .phase-header {
-            background: var(--color-bg-light);
-            padding: 20px 24px;
-            margin: 32px 0 24px;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-accent);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a4550 100%);
+            padding: 28px 32px;
+            margin: 40px 0 24px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(107, 139, 126, 0.15) 100%);
         }
 
         .phase-header h3 {
             margin: 0;
-            color: var(--color-primary);
+            color: white;
+            font-weight: 600;
         }
 
         .phase-header .subtitle {
-            font-size: 16px;
-            color: var(--color-text-secondary);
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
             margin-top: 8px;
         }
 
         .deliverables {
-            background: var(--color-bg-light);
-            padding: 20px 24px;
+            background: linear-gradient(135deg, #f8f8f8 0%, var(--color-bg-light) 100%);
+            padding: 24px 28px;
             margin: 24px 0;
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 2px solid var(--color-gray-light);
+            position: relative;
+        }
+
+        .deliverables::before {
+            content: '✓';
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 32px;
+            color: var(--color-green);
+            opacity: 0.3;
         }
 
         .deliverables strong {
-            color: var(--color-text);
+            color: var(--color-primary);
             display: block;
-            margin-bottom: 8px;
-            font-size: 16px;
+            margin-bottom: 12px;
+            font-size: 18px;
             font-weight: 600;
+        }
+
+        .deliverables p {
+            margin: 0;
         }
 
         /* Cover Page Specific */
@@ -330,18 +412,107 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-green) 100%);
+            position: relative;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover-page::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .cover-page h1 {
             font-size: 56px;
             line-height: 64px;
             max-width: 800px;
+            position: relative;
+            z-index: 1;
+            color: white;
         }
 
         .cover-page .subheader {
             max-width: 600px;
             font-size: 22px;
             line-height: 32px;
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cover-page .mini-header {
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cover-page .trusted-by {
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cover-page .trusted-by strong {
+            color: white;
+        }
+
+        /* Big Statement Box */
+        .big-statement {
+            background: linear-gradient(135deg, var(--color-gray-medium) 0%, var(--color-accent-muted) 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(122, 156, 165, 0.2);
+        }
+
+        .big-statement p {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: white;
+            border: 3px solid var(--color-green);
+            padding: 28px 32px;
+            margin: 32px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(74, 107, 95, 0.1);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 20px;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        /* Stats/Numbers */
+        .stat-highlight {
+            color: var(--color-green);
+            font-weight: 700;
+            font-size: 120%;
         }
     </style>
 </head>
@@ -393,9 +564,12 @@
                 compound.</p>
         </div>
 
-        <p><strong>How to make direct impact.</strong> AI-powered infrastructure for finding, activating, and converting
-            prospects, running in weeks, not months. Not strategy decks. Working systems that live in your tools and
-            learn from every interaction.</p>
+        <div class="highlight-box">
+            <p><strong>How to make direct impact.</strong> AI-powered infrastructure for finding, activating, and
+                converting
+                prospects, running in weeks, not months. Not strategy decks. Working systems that live in your tools and
+                learn from every interaction.</p>
+        </div>
 
         <div class="trusted-by">
             <strong>Trusted by:</strong> eLeads · Brabant Water · New Edition · Van Spaendonck · Sliced Bread · Calamai
@@ -411,7 +585,9 @@
 
         <h4>1. Test, Find What Works, Build It Into Your Systems</h4>
 
-        <p>Most agencies talk without executing or execute without learning. CairnShift does both.</p>
+        <div class="big-statement">
+            <p>Most agencies talk without executing or execute without learning. CairnShift does both.</p>
+        </div>
 
         <p>CairnShift takes the lead to get your GTM on the rails. Based on all the information, learning and insights
             you have we set the foundation, allowing to distil what the actual status quo is and how this can enrich
@@ -434,7 +610,9 @@
 
         <h4>2. AI Does the Grunt Work, Humans Close Deals</h4>
 
-        <p>Reps don't need replacement. They need leverage.</p>
+        <div class="big-statement">
+            <p>Reps don't need replacement. They need leverage.</p>
+        </div>
 
         <ul>
             <li>Complement your sales with the CairnShift AI-augmented team</li>
@@ -468,8 +646,11 @@
             </li>
         </ul>
 
-        <p>This isn't a pilot. It's production infrastructure that delivers qualified leads into your pipeline today and
-            gets smarter tomorrow.</p>
+        <div class="highlight-box">
+            <p>This isn't a pilot. It's production infrastructure that delivers qualified leads into your pipeline today
+                and
+                gets smarter tomorrow.</p>
+        </div>
 
         <hr>
 
@@ -506,7 +687,9 @@
 
         <h2>The 4 Phases</h2>
 
-        <p>Each phase delivers value you keep. But the real power is stacking them: each phase feeds the next.</p>
+        <div class="big-statement">
+            <p>Each phase delivers value you keep. But the real power is stacking them: each phase feeds the next.</p>
+        </div>
 
         <div class="phase-header">
             <h3>Phase 1: Research & Positioning (Month 1)</h3>
@@ -670,12 +853,18 @@
 
         <h2>The Result: Control Over Your Growth</h2>
 
-        <p><strong>From Heroics to Systems:</strong> Revenue that doesn't depend on your best rep having a good week.
-        </p>
+        <div class="highlight-box">
+            <p><strong>From Heroics to Systems:</strong> Revenue that doesn't depend on your best rep having a good
+                week.</p>
+        </div>
 
-        <p><strong>From Guessing to Knowing:</strong> Validating new markets in weeks, not quarters.</p>
+        <div class="highlight-box">
+            <p><strong>From Guessing to Knowing:</strong> Validating new markets in weeks, not quarters.</p>
+        </div>
 
-        <p><strong>From Decay to Growth:</strong> Infrastructure that appreciates in value the more you use it.</p>
+        <div class="highlight-box">
+            <p><strong>From Decay to Growth:</strong> Infrastructure that appreciates in value the more you use it.</p>
+        </div>
 
         <div class="footer">CairnShift · 2026</div>
     </div>
