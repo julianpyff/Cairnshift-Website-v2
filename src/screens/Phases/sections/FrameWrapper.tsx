@@ -84,6 +84,7 @@ export const FrameWrapper = (): JSX.Element => {
                     <img
                       className="relative w-[33.33px] h-[33.33px]"
                       alt="Arrow forward"
+                      src="https://c.animaapp.com/ml3r5025flOZYU/img/arrow-forward.svg"
                     />
                   </div>
                 </div>
@@ -101,6 +102,7 @@ export const FrameWrapper = (): JSX.Element => {
                 <img
                   className="mt-[-0.50px] relative self-stretch w-full h-px object-cover"
                   alt="Vector"
+                  src="https://c.animaapp.com/ml3r5025flOZYU/img/vector-187.svg"
                 />
 
                 <div className="gap-8 rounded-lg flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
@@ -151,7 +153,7 @@ export const FrameWrapper = (): JSX.Element => {
                   </div>
                 </div>
 
-                <img className="relative self-stretch w-full h-px" alt="Vector" />
+                <img className="relative self-stretch w-full h-px" alt="Vector" src="https://c.animaapp.com/ml3r5025flOZYU/img/vector-187.svg" />
               </div>
             </div>
 
