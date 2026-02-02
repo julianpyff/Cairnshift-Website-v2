@@ -5,18 +5,18 @@ import { Master } from "../../../../components/Master";
 
 export const FrameWrapper = (): JSX.Element => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-[68px_360px] px-[60px] py-[104px] relative self-stretch w-full flex-[0_0_auto] bg-[#f3f3f3] overflow-hidden">
-      <div className="flex items-end relative flex-1 grow">
-        <div className="inline-flex flex-col items-start gap-8 relative flex-[0_0_auto]">
-          <div className="inline-flex items-center gap-4 relative flex-[0_0_auto]">
-            <div className="relative w-2 h-2 bg-[#ee9d2b] rounded" />
+    <div className="flex flex-col items-center justify-center gap-12 lg:gap-[68px] px-4 md:px-8 lg:px-[60px] py-12 md:py-16 lg:py-[104px] w-full bg-[#f3f3f3] overflow-hidden">
+      <div className="flex flex-col w-full max-w-[1440px] mx-auto gap-8 md:gap-12 text-center lg:text-left">
+        <div className="flex flex-col items-start gap-6 md:gap-8 w-full max-w-[872px]">
+          <div className="inline-flex items-center gap-4">
+            <div className="w-2 h-2 bg-[#ee9d2b] rounded" />
 
-            <div className="flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] text-[#222f30] text-right leading-[14px] whitespace-nowrap relative font-medium text-base tracking-[0]">
+            <div className="[font-family:'DM_Mono',Helvetica] text-[#222f30] leading-[14px] font-medium text-sm md:text-base tracking-[0] uppercase">
               THE ENGINES
             </div>
           </div>
 
-          <p className="relative w-[872px] [font-family:'DM_Sans',Helvetica] font-normal text-[#0d0d0d] text-[40px] tracking-[0] leading-10">
+          <p className="w-full [font-family:'DM_Sans',Helvetica] font-normal text-[#0d0d0d] text-[28px] md:text-[32px] lg:text-[40px] tracking-[0] leading-[1.2] lg:leading-10 text-left">
             Four connected systems that power the full GTM loop. Each engine
             feeds the others, creating a system that compounds over time and
             gets smarter with every interaction.
@@ -24,75 +24,56 @@ export const FrameWrapper = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="relative w-[calc(100%_+_120px)] -ml-[60px] -mr-[60px] overflow-x-auto no-scrollbar">
-        <div className="inline-flex items-start gap-4 relative px-[60px]">
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#15353c] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
-            <div className="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
+      <div className="flex w-[calc(100%_+_32px)] -ml-4 md:w-[calc(100%_+_64px)] md:-ml-8 lg:w-[calc(100%_+_120px)] lg:-ml-[60px] overflow-x-auto no-scrollbar px-4 md:px-8 lg:px-[60px] snap-x snap-mandatory lg:snap-none pb-8">
+        <div className="flex flex-row gap-4 md:gap-8 lg:gap-8 w-max">
+          {/* Knowledge Card */}
+          <div className="flex flex-col w-[85vw] md:w-[400px] lg:w-[504px] items-start justify-between p-6 md:p-8 lg:p-12 bg-[#15353c] rounded-2xl overflow-hidden min-h-[360px] md:min-h-[400px] lg:min-h-[456px] shrink-0 snap-center">
+            <div className="flex items-start justify-between w-full">
+              <div className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-[32px] md:text-[40px] lg:text-5xl tracking-[-1.00px] leading-tight">
                 Knowledge
               </div>
-
-              <LightDarkNoSize
-                className="!flex-[0_0_auto] !left-[unset] !top-[unset]"
-                visible={false}
-              />
             </div>
 
-            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-lg md:text-xl tracking-[-0.50px] leading-relaxed mt-auto">
               Internal docs, CRM data, and market research enriched with live GTM
               signals. A feedback loop between strategy and execution that
               improves with every interaction.
             </p>
-
-            <Master
-              className="!rounded-[11.17px] !right-8 !gap-[13.96px] !justify-end !p-[19.54px] !items-start !absolute !left-[unset] !bg-[#0d2328] !top-8"
-              hasDiv={false}
-              visible={false}
-            />
           </div>
 
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#e2e2e2] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
-            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
+          {/* Content Card */}
+          <div className="flex flex-col w-[85vw] md:w-[400px] lg:w-[504px] items-start justify-between p-6 md:p-8 lg:p-12 bg-[#e2e2e2] rounded-2xl overflow-hidden min-h-[360px] md:min-h-[400px] lg:min-h-[456px] shrink-0 snap-center">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-[32px] md:text-[40px] lg:text-5xl tracking-[-1.00px] leading-tight">
               Content
             </div>
 
-            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-xl tracking-[-0.50px] leading-[normal]">
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-lg md:text-xl tracking-[-0.50px] leading-relaxed mt-auto">
               Live GTM insights guide high-impact materials. Interactive lead
               magnets create high-intent prospects, and validated messaging boosts
               credibility.
             </p>
-
-            <Master
-              className="!rounded-[11.17px] !right-8 !gap-[13.96px] !justify-end !p-[19.54px] !items-start !absolute !left-[unset] !bg-[#d1d1d1] !top-8"
-              hasDiv={false}
-              visible={false}
-            />
           </div>
 
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-[#849194] rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
-            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-white text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
+          {/* Activation Card */}
+          <div className="flex flex-col w-[85vw] md:w-[400px] lg:w-[504px] items-start justify-between p-6 md:p-8 lg:p-12 bg-[#849194] rounded-2xl overflow-hidden min-h-[360px] md:min-h-[400px] lg:min-h-[456px] shrink-0 snap-center">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-[32px] md:text-[40px] lg:text-5xl tracking-[-1.00px] leading-tight">
               Activation
             </div>
 
-            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-white text-xl tracking-[-0.50px] leading-[normal]">
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-lg md:text-xl tracking-[-0.50px] leading-relaxed mt-auto">
               Real-time signals like intent data and sales triggers combined with
               prospect research guide when and how to reach out. Outreach happens
               when there&apos;s a reason.
             </p>
-
-            <Master
-              className="!rounded-[10.67px] !right-8 !gap-[13.33px] !justify-center !p-[18.67px] !absolute !left-[unset] !bg-[#727c7f] !top-8"
-              hasDiv={false}
-              visible={false}
-            />
           </div>
 
-          <div className="flex flex-col w-[504px] items-start justify-between p-12 relative self-stretch bg-white rounded-2xl overflow-hidden shrink-0 min-h-[456px]">
-            <div className="relative flex items-end justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-5xl tracking-[-1.00px] leading-[48px] whitespace-nowrap">
+          {/* Revenue Card */}
+          <div className="flex flex-col w-[85vw] md:w-[400px] lg:w-[504px] items-start justify-between p-6 md:p-8 lg:p-12 bg-white rounded-2xl overflow-hidden min-h-[360px] md:min-h-[400px] lg:min-h-[456px] shrink-0 snap-center relative">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-[32px] md:text-[40px] lg:text-5xl tracking-[-1.00px] leading-tight">
               Revenue
             </div>
 
-            <p className="relative flex items-end justify-start self-stretch [font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-xl tracking-[-0.50px] leading-[normal]">
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#15353c] text-lg md:text-xl tracking-[-0.50px] leading-relaxed mt-auto">
               AI agents handle replies, call prep, and follow-ups. Sales calls get
               analyzed to refine playbooks and optimize pipeline, turning every
               conversation into a learning opportunity.
@@ -113,24 +94,13 @@ export const FrameWrapper = (): JSX.Element => {
         </div>
       </div>
 
-      <img
-        className="absolute w-px h-px top-[-1916px] left-[-8242px] object-cover"
-        alt="Subtract"
-        src="/img/subtract.svg"
-      />
 
-      <img
-        className="absolute w-px h-px top-[-1916px] left-[-8242px] object-cover"
-        alt="Subtract"
-        src="/img/image.svg"
-      />
-
-      <div className="inline-flex min-w-24 items-center justify-center gap-6 pl-6 pr-1 py-1 relative flex-[0_0_auto] bg-[#15353c] rounded-[56px]">
-        <div className="flex-1 font-medium-text-base text-white text-center leading-[var(--medium-text-base-line-height)] relative font-[number:var(--medium-text-base-font-weight)] text-[length:var(--medium-text-base-font-size)] tracking-[var(--medium-text-base-letter-spacing)] [font-style:var(--medium-text-base-font-style)]">
+      <div className="inline-flex min-w-24 items-center justify-center gap-6 pl-6 pr-1 py-1 bg-[#15353c] rounded-[56px] mt-8 cursor-pointer hover:bg-[#1f4a53] transition-colors">
+        <div className="flex-1 [font-family:'DM_Sans',Helvetica] font-medium text-white text-center leading-normal text-base tracking-[0]">
           The Engines
         </div>
 
-        <div className="relative flex-[0_0_auto] inline-flex items-start">
+        <div className="inline-flex items-start">
           <Master
             className="!rounded-[48px] !justify-center !flex-[0_0_auto] !p-3.5 !left-[unset] !bg-[#234850] !top-[unset]"
             hasDiv={false}

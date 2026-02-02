@@ -166,10 +166,15 @@ const cases: CaseStudyData[] = [
 const CaseCard = ({ card }: { card: CaseStudyData }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [stickyTop, setStickyTop] = useState(100);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const updateStickyTop = () => {
-      if (cardRef.current) {
+      // Check if we're on mobile/tablet (< 1024px)
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+
+      if (cardRef.current && !mobile) {
         const height = cardRef.current.offsetHeight;
         const viewportHeight = window.innerHeight;
         // Calculate the top offset.
@@ -201,48 +206,48 @@ const CaseCard = ({ card }: { card: CaseStudyData }) => {
     <div
       ref={cardRef}
       id={card.id}
-      className="sticky flex flex-col w-full max-w-[1440px] rounded-[24px] shadow-xl mb-24 last:mb-0"
+      className={`flex flex-col w-full max-w-[1440px] rounded-2xl md:rounded-[24px] shadow-xl mb-6 md:mb-12 lg:mb-24 last:mb-0 ${!isMobile ? 'lg:sticky' : ''}`}
       style={{
         backgroundColor: card.bg,
-        top: `${stickyTop}px`,
-        zIndex: 1 // Ensure visual stacking order if needed, though DOM order handles it
+        top: !isMobile ? `${stickyTop}px` : undefined,
+        zIndex: !isMobile ? 1 : undefined // Ensure visual stacking order if needed, though DOM order handles it
       }}
     >
       {/* Header Section */}
-      <div className="flex flex-col px-8 pt-8 pb-4 gap-4">
+      <div className="flex flex-col px-4 md:px-6 lg:px-8 pt-6 md:pt-8 pb-3 md:pb-4 gap-3 md:gap-4">
         <div
-          className="inline-flex items-center gap-4 px-3 py-2 rounded-lg self-start"
+          className="inline-flex items-center gap-3 md:gap-4 px-2 md:px-3 py-1.5 md:py-2 rounded-lg self-start"
           style={{ backgroundColor: card.labelBg }}
         >
-          <div className="w-2.5 h-2.5 bg-[#ee9d2b]" />
-          <div className="[font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base whitespace-nowrap">
+          <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#ee9d2b]" />
+          <div className="[font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-sm md:text-base whitespace-nowrap">
             {card.label}
           </div>
         </div>
 
-        <div className="w-full h-px bg-[#ffffff1a] mt-4" />
+        <div className="w-full h-px bg-[#ffffff1a] mt-2 md:mt-4" />
       </div>
 
       {/* Main Content Grid */}
-      <div className="flex flex-col lg:flex-row px-8 pb-12 gap-12 h-full grow">
+      <div className="flex flex-col lg:flex-row px-4 md:px-6 lg:px-8 pb-8 md:pb-10 lg:pb-12 gap-8 md:gap-10 lg:gap-12 h-full grow">
         {/* Left Column */}
-        <div className="flex flex-col w-full lg:w-[45%] justify-between gap-8 shrink-0">
+        <div className="flex flex-col w-full lg:w-[45%] justify-between gap-6 md:gap-8 shrink-0">
           <div className="flex flex-col gap-2">
-            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[48px] lg:text-[64px] leading-[1.1] tracking-[-1.00px] -ml-[2px]">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] tracking-[-1.00px] -ml-[2px] text-[36px] leading-[1.1] md:text-[48px] lg:text-[64px]">
               {card.title}
             </div>
-            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[32px] lg:text-[48px] leading-[1.1] opacity-50 tracking-[-1.00px]">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] opacity-50 tracking-[-1.00px] text-[24px] leading-[1.1] md:text-[32px] lg:text-[48px]">
               {card.subtitle}
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 mt-auto">
+          <div className="flex flex-col gap-3 md:gap-4 mt-auto">
             <LineSeparator />
             <div className="flex flex-col gap-2">
-              <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+              <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] leading-tight text-[20px] md:text-[24px] lg:text-[32px]">
                 {card.resultTitle}
               </div>
-              <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg opacity-70">
+              <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] opacity-70 text-base md:text-lg">
                 {card.resultDesc}
               </div>
             </div>
@@ -250,37 +255,37 @@ const CaseCard = ({ card }: { card: CaseStudyData }) => {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col w-full lg:w-[55%] gap-6">
+        <div className="flex flex-col w-full lg:w-[55%] gap-4 md:gap-6">
           {/* Company Background */}
           <div
-            className="flex flex-col gap-4 p-6 rounded-lg"
+            className="flex flex-col gap-3 md:gap-4 p-4 md:p-5 lg:p-6 rounded-lg"
             style={{ backgroundColor: card.cardBg }}
           >
-            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] leading-tight text-[20px] md:text-[24px] lg:text-[32px]">
               Company Background
             </div>
-            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] opacity-70 leading-relaxed text-sm md:text-base lg:text-lg">
               {card.companyBgDesc}
             </p>
           </div>
 
           {/* The Challenge */}
           <div
-            className="flex flex-col gap-4 p-6 rounded-lg"
+            className="flex flex-col gap-3 md:gap-4 p-4 md:p-5 lg:p-6 rounded-lg"
             style={{ backgroundColor: card.cardBg }}
           >
-            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] leading-tight text-[20px] md:text-[24px] lg:text-[32px]">
               The Challenge
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 md:gap-4">
               {card.challenges.map((challenge, i) => (
                 <React.Fragment key={i}>
                   {i > 0 && <LineSeparator />}
-                  <div className="flex items-start gap-4">
-                    <div className="flex items-center justify-center w-6 h-6 shrink-0 opacity-70 mt-1">
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="flex items-center justify-center w-5 h-5 md:w-6 md:h-6 shrink-0 opacity-70 mt-0.5 md:mt-1">
                       <CloseIcon />
                     </div>
-                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] opacity-70 leading-relaxed text-sm md:text-base lg:text-lg">
                       {challenge}
                     </p>
                   </div>
@@ -291,21 +296,21 @@ const CaseCard = ({ card }: { card: CaseStudyData }) => {
 
           {/* The Approach */}
           <div
-            className="flex flex-col gap-4 p-6 rounded-lg"
+            className="flex flex-col gap-3 md:gap-4 p-4 md:p-5 lg:p-6 rounded-lg"
             style={{ backgroundColor: card.cardBg }}
           >
-            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] leading-tight text-[20px] md:text-[24px] lg:text-[32px]">
               The Approach
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 md:gap-4">
               {card.approach.map((item, i) => (
                 <React.Fragment key={i}>
                   {i > 0 && <LineSeparator />}
                   <div className="flex flex-col gap-1">
-                    <div className="[font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg opacity-70">
+                    <div className="[font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] opacity-70 text-base md:text-lg">
                       {item.title}
                     </div>
-                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] opacity-70 leading-relaxed text-sm md:text-base lg:text-lg">
                       {item.desc}
                     </p>
                   </div>
@@ -321,7 +326,7 @@ const CaseCard = ({ card }: { card: CaseStudyData }) => {
 
 export const FrameWrapper = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-center gap-8 w-full pb-20">
+    <div className="flex flex-col items-center gap-6 md:gap-8 w-full pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-0">
       {cases.map((card) => (
         <CaseCard key={card.id} card={card} />
       ))}
