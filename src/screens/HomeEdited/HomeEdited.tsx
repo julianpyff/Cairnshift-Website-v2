@@ -21,9 +21,9 @@ export const HomeEdited = (): JSX.Element => {
         </div>
 
         {/* Hero Section - Desktop */}
-        <div className="hidden lg:block relative w-full h-[800px] overflow-clip">
-          {/* Hero Image - No rounded corners */}
-          <div className="absolute top-[32px] left-[17px] w-[1407px] h-[698px]">
+        <div className="hidden lg:block relative w-full h-[834px] overflow-visible">
+          {/* Hero Image - Full width with 16px margins to match HowWeWork */}
+          <div className="absolute top-4 left-4 right-4 h-[698px] rounded-lg overflow-hidden">
             <img
               className="w-full h-full object-cover"
               alt="Hero Visual"
@@ -31,14 +31,17 @@ export const HomeEdited = (): JSX.Element => {
             />
           </div>
 
-          {/* Hero Card - Overlapping with rounded corners */}
-          <div className="absolute top-[376px] left-[calc(50%+7px)] w-[697px] h-[408px] bg-[#15353c] rounded-lg p-10 flex flex-col justify-between">
-            <p className="[font-family:'DM_Sans',Helvetica] font-medium text-white text-5xl tracking-[-3px] leading-[56px]">
-              AI-First Go-to-Market Orchestration &amp; Execution
-            </p>
-            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-base leading-5 w-[408px]">
-              CairnShift helps scale-ups, corporates, and enterprises organise their sales foundation to consistently create new business.
-            </p>
+          {/* Hero Card Wrapper - Creates gray outline */}
+          <div className="absolute bottom-[104px] right-0 p-4 bg-[#f3f3f3] rounded-xl z-10">
+            {/* Hero Card */}
+            <div className="w-[697px] h-[408px] bg-[#15353c] rounded-lg p-10 flex flex-col justify-between">
+              <p className="[font-family:'DM_Sans',Helvetica] font-medium text-white text-5xl tracking-[-3px] leading-[56px]">
+                AI-First Go-to-Market Orchestration &amp; Execution
+              </p>
+              <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white text-base leading-5 w-[408px]">
+                CairnShift helps scale-ups, corporates, and enterprises organise their sales foundation to consistently create new business.
+              </p>
+            </div>
           </div>
         </div>
 

@@ -1,570 +1,330 @@
+import React, { useRef, useState, useEffect } from "react";
+
+const CloseIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M18 6L6 18M6 6L18 18"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const LineSeparator = () => (
+  <img
+    className="self-stretch w-full relative h-px object-cover opacity-20"
+    alt="Vector"
+    src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
+  />
+);
+
+interface ApproachItem {
+  title: string;
+  desc: string;
+}
+
+interface CaseStudyData {
+  id: string;
+  label: string;
+  labelBg: string;
+  bg: string;
+  cardBg: string;
+  title: string;
+  subtitle: string;
+  resultTitle: string;
+  resultDesc: string;
+  companyBgDesc: string;
+  challenges: string[];
+  approach: ApproachItem[];
+}
+
+const cases: CaseStudyData[] = [
+  {
+    id: "case-1",
+    label: "CASE STUDY 01",
+    labelBg: "#082d34",
+    bg: "#15353c",
+    cardBg: "#092e35",
+    title: "Mourik",
+    subtitle: "Infrastructure, Industry, Construction",
+    resultTitle: "20 In-Person Meetings",
+    resultDesc: "Generated significant cross-sell opportunities.",
+    companyBgDesc:
+      "Mourik (est. 1933) is a family-owned Dutch engineering and contracting company with €749M turnover and 2,100+ employees.",
+    challenges: [
+      "Acquired innovative technology but lacked a structured GTM foundation.",
+      "Struggled to proactively engage existing customers with new solutions.",
+      "No data-driven approach to prioritize new prospects.",
+    ],
+    approach: [
+      {
+        title: "Knowledge Engine",
+        desc: "Ingested acquired technology data and leveraged deep research to map target companies and personas per geography.",
+      },
+      {
+        title: "Activation Engine",
+        desc: "Prioritized outreach using a waterfall approach and validated the format with friendly customers.",
+      },
+    ],
+  },
+  {
+    id: "case-2",
+    label: "CASE STUDY 02",
+    labelBg: "#727d7f",
+    bg: "#849194",
+    cardBg: "#727d7f",
+    title: "Blits.ai",
+    subtitle: "GenAI & Enterprise Software",
+    resultTitle: "High-Value C-Level Conversations",
+    resultDesc: "Opened early opportunities through a custom targeting approach.",
+    companyBgDesc:
+      "Blits.ai is a secure, modular GenAI framework designed to surface critical knowledge and integrate seamless AI into complex enterprise environments.",
+    challenges: [
+      "Founder-led sales limited scalability and focus.",
+      "Organic growth left a lack of fundamental sales and marketing basics.",
+      "Expanding into new industries and finding B2B end-customers was a complete unknown.",
+    ],
+    approach: [
+      {
+        title: "Knowledge Engine",
+        desc: "Built a 'Knowledge fundament' to enable tailored prospecting and revamped the value proposition.",
+      },
+      {
+        title: "Activation Engine",
+        desc: "Validated three new industries through iterative outreach and prioritized key events to drive high-quality meetings.",
+      },
+    ],
+  },
+  {
+    id: "case-3",
+    label: "CASE STUDY 03",
+    labelBg: "#082d34",
+    bg: "#15353c",
+    cardBg: "#092e35",
+    title: "naext.ai",
+    subtitle: "Deep-Tech & Spatial Computing",
+    resultTitle: "Identified Key GTM Partner",
+    resultDesc:
+      "Created a scalable engagement model to scale business and deploy tech.",
+    companyBgDesc:
+      "Naext.ai is a deep-tech company using human-centric spatial computing and inclusive AR to make complex environments (like hospitals) intuitive.",
+    challenges: [
+      "Primary focus was on engineering, leaving new business without process or structure.",
+      "Lacked the deep research required to guide execution effectively.",
+      "Stretched budgets required resources to be prioritized for development.",
+    ],
+    approach: [
+      {
+        title: "Knowledge Engine",
+        desc: "Solidified deep research in a two-week iterative process to identify Tier 1, 2, and 3 targets.",
+      },
+      {
+        title: "Activation Engine",
+        desc: 'Executed explorative, "interview-style" discovery calls with board members to learn without immediate commercial intent.',
+      },
+    ],
+  },
+  {
+    id: "case-4",
+    label: "CASE STUDY 04",
+    labelBg: "#727d7f",
+    bg: "#849194",
+    cardBg: "#727d7f",
+    title: "Eleads",
+    subtitle: "Legal Tech & Lead Generation",
+    resultTitle: "Doubled Partner Base (6 Months)",
+    resultDesc:
+      "Grew the customer base from 24 to 48 law firms using a structured outreach cadence.",
+    companyBgDesc:
+      "Eleads operates specialist websites connecting legal seekers with law firms, reaching up to 1 million people annually.",
+    challenges: [
+      "Founder-led operation wanted to double growth but lacked a clear conversion process.",
+      "Relied on costly traditional advertising due to a lack of prospect data.",
+      "Sales process used overly detailed content that failed to convert.",
+    ],
+    approach: [
+      {
+        title: "Knowledge Engine",
+        desc: "Conducted a market deep dive to clarify ICPs and their specific knowledge needs.",
+      },
+      {
+        title: "Revenue Engine",
+        desc: "Streamlined discovery calls from 45 to 15 minutes and established a clear process from engagement to adoption.",
+      },
+    ],
+  },
+];
+
+const CaseCard = ({ card }: { card: CaseStudyData }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [stickyTop, setStickyTop] = useState(100);
+
+  useEffect(() => {
+    const updateStickyTop = () => {
+      if (cardRef.current) {
+        const height = cardRef.current.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        // Calculate the top offset.
+        // We want the card to prevent being covered until its bottom is visible.
+        // Standard sticky behavior: stuck at 'top'.
+        // If height > viewport, 'top' must be negative so that the bottom of the element aligns with viewport bottom when stuck.
+        // calculatedTop approx = ViewportHeight - CardHeight - (Buffer/Margin)
+        // We ensure it doesn't stick 'too low' (max 100px from top)
+
+        const buffer = 40;
+        const calculatedTop = Math.min(100, viewportHeight - height - buffer);
+
+        setStickyTop(calculatedTop);
+      }
+    };
+
+    updateStickyTop();
+    window.addEventListener("resize", updateStickyTop);
+    // Also update after a short delay to ensure fonts/images loaded
+    const timeoutId = setTimeout(updateStickyTop, 500);
+
+    return () => {
+      window.removeEventListener("resize", updateStickyTop);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      id={card.id}
+      className="sticky flex flex-col w-full max-w-[1440px] rounded-[24px] shadow-xl mb-24 last:mb-0"
+      style={{
+        backgroundColor: card.bg,
+        top: `${stickyTop}px`,
+        zIndex: 1 // Ensure visual stacking order if needed, though DOM order handles it
+      }}
+    >
+      {/* Header Section */}
+      <div className="flex flex-col px-8 pt-8 pb-4 gap-4">
+        <div
+          className="inline-flex items-center gap-4 px-3 py-2 rounded-lg self-start"
+          style={{ backgroundColor: card.labelBg }}
+        >
+          <div className="w-2.5 h-2.5 bg-[#ee9d2b]" />
+          <div className="[font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base whitespace-nowrap">
+            {card.label}
+          </div>
+        </div>
+
+        <div className="w-full h-px bg-[#ffffff1a] mt-4" />
+      </div>
+
+      {/* Main Content Grid */}
+      <div className="flex flex-col lg:flex-row px-8 pb-12 gap-12 h-full grow">
+        {/* Left Column */}
+        <div className="flex flex-col w-full lg:w-[45%] justify-between gap-8 shrink-0">
+          <div className="flex flex-col gap-2">
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[48px] lg:text-[64px] leading-[1.1] tracking-[-1.00px] -ml-[2px]">
+              {card.title}
+            </div>
+            <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[32px] lg:text-[48px] leading-[1.1] opacity-50 tracking-[-1.00px]">
+              {card.subtitle}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 mt-auto">
+            <LineSeparator />
+            <div className="flex flex-col gap-2">
+              <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+                {card.resultTitle}
+              </div>
+              <div className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg opacity-70">
+                {card.resultDesc}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col w-full lg:w-[55%] gap-6">
+          {/* Company Background */}
+          <div
+            className="flex flex-col gap-4 p-6 rounded-lg"
+            style={{ backgroundColor: card.cardBg }}
+          >
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+              Company Background
+            </div>
+            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+              {card.companyBgDesc}
+            </p>
+          </div>
+
+          {/* The Challenge */}
+          <div
+            className="flex flex-col gap-4 p-6 rounded-lg"
+            style={{ backgroundColor: card.cardBg }}
+          >
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+              The Challenge
+            </div>
+            <div className="flex flex-col gap-4">
+              {card.challenges.map((challenge, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <LineSeparator />}
+                  <div className="flex items-start gap-4">
+                    <div className="flex items-center justify-center w-6 h-6 shrink-0 opacity-70 mt-1">
+                      <CloseIcon />
+                    </div>
+                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+                      {challenge}
+                    </p>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+
+          {/* The Approach */}
+          <div
+            className="flex flex-col gap-4 p-6 rounded-lg"
+            style={{ backgroundColor: card.cardBg }}
+          >
+            <div className="[font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[24px] lg:text-[32px] leading-tight">
+              The Approach
+            </div>
+            <div className="flex flex-col gap-4">
+              {card.approach.map((item, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <LineSeparator />}
+                  <div className="flex flex-col gap-1">
+                    <div className="[font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg opacity-70">
+                      {item.title}
+                    </div>
+                    <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-base lg:text-lg opacity-70 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const FrameWrapper = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-      <div id="case-1" className="relative self-stretch w-full h-[1124px] bg-[#15353c] rounded-3xl">
-        <div className="flex flex-col w-full items-start px-12 py-0 absolute top-[118px] left-0 bg-[#222f30]">
-          <div className="relative max-w-[1524px] w-[1317.66px] h-px bg-[#ffffff1a]" />
-        </div>
-
-        <div className="absolute top-[119px] left-0 w-[1440px] h-[1006px] bg-[#15353c] rounded-[0px_0px_24px_24px]">
-          <div className="flex flex-col w-[579px] items-start gap-2 absolute top-[75px] left-[60px]">
-            <div className="relative flex items-center justify-center self-stretch h-[66px] mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[38px]">
-              Mourik
-            </div>
-
-            <div className="relative flex items-center justify-center self-stretch opacity-50 [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[59px]">
-              Infrastructure, Industry, Construction
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[647px] items-start gap-2 absolute top-[72px] left-[733px]">
-            <div className="flex flex-col items-start gap-6 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                Company Background
-              </div>
-
-              <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Mourik (est. 1933) is a family-owned Dutch engineering and
-                contracting company with €749M turnover and 2,100+ employees.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Challenge
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Acquired innovative technology but lacked a structured GTM
-                    foundation.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Struggled to proactively engage existing customers with new
-                    solutions.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-center flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-0.50px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    No data-driven approach to prioritize new prospects.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-start gap-6 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Approach
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Knowledge Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Ingested acquired technology data and leveraged deep
-                    research to map target companies and personas per geography.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Activation Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Prioritized outreach using a waterfall approach and
-                    validated the format with friendly customers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[567px] items-start gap-8 absolute top-[601px] left-[60px]">
-            <img
-              className="w-[567px] mt-[-0.50px] relative h-px object-cover"
-              alt="Vector"
-              src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-            />
-
-            <div className="flex flex-col w-[409px] h-[77px] items-start gap-4 relative">
-              <div className="relative flex-1 self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px] whitespace-nowrap">
-                20 In-Person Meetings
-              </div>
-
-              <div className="relative flex-1 self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Generated significant cross-sell opportunities.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="inline-flex items-center gap-4 px-3 py-2 absolute top-12 left-[60px] bg-[#082d34] rounded-lg">
-          <div className="relative w-2.5 h-2.5 bg-[#ee9d2b]" />
-
-          <div className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base text-right tracking-[0] leading-[14px] whitespace-nowrap">
-            CASE STUDY 01
-          </div>
-        </div>
-      </div>
-
-      <div id="case-2" className="relative self-stretch w-full h-[1124px] bg-[#849194] rounded-3xl">
-        <div className="flex flex-col w-full items-start px-12 py-0 absolute top-[118px] left-0 bg-[#ffffff4c]">
-          <div className="relative max-w-[1524px] w-[1317.66px] h-px bg-[#ffffff1a]" />
-        </div>
-
-        <div className="absolute top-[119px] left-0 w-[1440px] h-[1006px] bg-[#849194] rounded-[0px_0px_24px_24px]">
-          <div className="flex flex-col w-[579px] items-start gap-2 absolute top-[75px] left-[60px]">
-            <div className="relative flex items-center justify-center self-stretch h-[66px] mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[38px]">
-              Blits.ai
-            </div>
-
-            <div className="relative flex items-center justify-center self-stretch opacity-50 [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[59px]">
-              GenAI & Enterprise Software
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[647px] items-start gap-2 absolute top-[72px] left-[733px]">
-            <div className="gap-6 px-10 py-8 bg-[#727d7f] rounded-lg flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                Company Background
-              </div>
-
-              <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Blits.ai is a secure, modular GenAI framework designed to surface critical knowledge and integrate seamless AI into complex enterprise environments.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#727d7f] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Challenge
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Founder-led sales limited scalability and focus.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Organic growth left a lack of fundamental sales and marketing basics.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-center flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-0.50px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Expanding into new industries and finding B2B end-customers was a complete unknown.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="gap-6 px-10 py-8 bg-[#727d7f] rounded-lg flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Approach
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Knowledge Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Built a 'Knowledge fundament' to enable tailored prospecting and revamped the value proposition.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Activation Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Validated three new industries through iterative outreach and prioritized key events to drive high-quality meetings.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[567px] items-start gap-8 absolute top-[601px] left-[60px]">
-            <img
-              className="w-[567px] mt-[-0.50px] relative h-px object-cover"
-              alt="Vector"
-              src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-            />
-
-            <div className="flex flex-col w-[409px] h-[77px] items-start gap-4 relative">
-              <div className="relative flex-1 self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px] whitespace-nowrap">
-                High-Value C-Level Conversations
-              </div>
-
-              <div className="relative flex-1 self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Opened early opportunities through a custom targeting approach.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="inline-flex items-center gap-4 px-3 py-2 absolute top-12 left-[60px] bg-[#727d7f] rounded-lg">
-          <div className="relative w-2.5 h-2.5 bg-[#ee9d2b]" />
-
-          <div className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base text-right tracking-[0] leading-[14px] whitespace-nowrap">
-            CASE STUDY 02
-          </div>
-        </div>
-      </div>
-
-      <div id="case-3" className="relative self-stretch w-full h-[1124px] bg-[#15353c] rounded-3xl">
-        <div className="flex flex-col w-full items-start px-12 py-0 absolute top-[118px] left-0 bg-[#222f30]">
-          <div className="relative max-w-[1524px] w-full h-px bg-[#ffffff1a]" />
-        </div>
-
-        <div className="absolute top-[119px] left-0 w-[1440px] h-[1006px] bg-[#15353c] rounded-[0px_0px_24px_24px]">
-          <div className="flex flex-col w-[579px] items-start gap-2 absolute top-[75px] left-[60px]">
-            <div className="relative flex items-center justify-center self-stretch h-[66px] mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[38px]">
-              naext.ai
-            </div>
-
-            <div className="relative flex items-center justify-center self-stretch opacity-50 [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[59px]">
-              Deep-Tech & Spatial Computing
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[647px] items-start gap-2 absolute top-[72px] left-[733px]">
-            <div className="flex flex-col items-start gap-6 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                Company Background
-              </div>
-
-              <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Naext.ai is a deep-tech company using human-centric spatial computing and inclusive AR to make complex environments (like hospitals) intuitive.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Challenge
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Primary focus was on engineering, leaving new business without process or structure.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Lacked the deep research required to guide execution effectively.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-center flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-0.50px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Stretched budgets required resources to be prioritized for development.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-start gap-6 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#092e35] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Approach
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Knowledge Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Solidified deep research in a two-week iterative process to identify Tier 1, 2, and 3 targets.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Activation Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Executed explorative, "interview-style" discovery calls with board members to learn without immediate commercial intent.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[567px] items-start gap-8 absolute top-[601px] left-[60px]">
-            <img
-              className="w-[567px] mt-[-0.50px] relative h-px object-cover"
-              alt="Vector"
-              src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-            />
-
-            <div className="flex flex-col w-[409px] h-[77px] items-start gap-4 relative">
-              <div className="relative flex-1 self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px] whitespace-nowrap">
-                Identified Key GTM Partner
-              </div>
-
-              <div className="relative flex-1 self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Created a scalable engagement model to scale business and deploy tech.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="inline-flex items-center gap-4 px-3 py-2 absolute top-12 left-[60px] bg-[#082d34] rounded-lg">
-          <div className="relative w-2.5 h-2.5 bg-[#ee9d2b]" />
-
-          <div className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base text-right tracking-[0] leading-[14px] whitespace-nowrap">
-            CASE STUDY 03
-          </div>
-        </div>
-      </div>
-
-      <div id="case-4" className="relative self-stretch w-full h-[1124px] bg-[#849194] rounded-3xl">
-        <div className="flex flex-col w-full items-start px-12 py-0 absolute top-[118px] left-0 bg-[#ffffff4c]">
-          <div className="relative max-w-[1524px] w-[1317.66px] h-px bg-[#ffffff1a]" />
-        </div>
-
-        <div className="absolute top-[119px] left-0 w-[1440px] h-[1006px] bg-[#849194] rounded-[0px_0px_24px_24px]">
-          <div className="flex flex-col w-[579px] items-start gap-2 absolute top-[75px] left-[60px]">
-            <div className="relative flex items-center justify-center self-stretch h-[66px] mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[38px]">
-              Eleads
-            </div>
-
-            <div className="relative flex items-center justify-center self-stretch opacity-50 [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-[64px] tracking-[-1.00px] leading-[59px]">
-              Legal Tech & Lead Generation
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[647px] items-start gap-2 absolute top-[72px] left-[733px]">
-            <div className="gap-6 px-10 py-8 bg-[#727d7f] rounded-lg flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                Company Background
-              </div>
-
-              <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Eleads operates specialist websites connecting legal seekers with law firms, reaching up to 1 million people annually.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 px-10 py-8 relative self-stretch w-full flex-[0_0_auto] bg-[#727d7f] rounded-lg">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Challenge
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Founder-led operation wanted to double growth but lacked a clear conversion process.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-start flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-1.00px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Relied on costly traditional advertising due to a lack of prospect data.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="items-center flex gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-[24.34px] h-6 mt-[-1.00px] opacity-70 [font-family:'Material_Icons',Helvetica] font-normal text-[#ffffff] text-2xl tracking-[0] leading-6 whitespace-nowrap">
-                    close
-                  </div>
-
-                  <p className="relative flex-1 mt-[-0.50px] opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Sales process used overly detailed content that failed to convert.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="gap-6 px-10 py-8 bg-[#727d7f] rounded-lg flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px]">
-                The Approach
-              </div>
-
-              <div className="gap-4 px-0 py-4 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Knowledge Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Conducted a market deep dive to clarify ICPs and their specific knowledge needs.
-                  </p>
-                </div>
-
-                <img
-                  className="self-stretch w-full relative h-px object-cover"
-                  alt="Vector"
-                  src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-                />
-
-                <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-bold text-[#ffffff] text-lg leading-[normal] relative mt-[-1.00px] tracking-[0]">
-                    Revenue Engine
-                  </div>
-
-                  <p className="relative self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                    Streamlined discovery calls from 45 to 15 minutes and established a clear process from engagement to adoption.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[567px] items-start gap-8 absolute top-[601px] left-[60px]">
-            <img
-              className="w-[567px] mt-[-0.50px] relative h-px object-cover"
-              alt="Vector"
-              src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/vector-188.svg"
-            />
-
-            <div className="flex flex-col w-[409px] h-[77px] items-start gap-4 relative">
-              <div className="relative flex-1 self-stretch mt-[-1.00px] [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-[32px] tracking-[-1.00px] leading-[38px] whitespace-nowrap">
-                Doubled Partner Base (6 Months)
-              </div>
-
-              <div className="relative flex-1 self-stretch opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#ffffff] text-lg tracking-[0] leading-[normal]">
-                Grew the customer base from 24 to 48 law firms using a structured outreach cadence.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="inline-flex items-center gap-4 px-3 py-2 absolute top-12 left-[60px] bg-[#727d7f] rounded-lg">
-          <div className="relative w-2.5 h-2.5 bg-[#ee9d2b]" />
-
-          <div className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Mono',Helvetica] font-medium text-[#f3f3f3] text-base text-right tracking-[0] leading-[14px] whitespace-nowrap">
-            CASE STUDY 04
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col items-center gap-8 w-full pb-20">
+      {cases.map((card) => (
+        <CaseCard key={card.id} card={card} />
+      ))}
     </div>
   );
 };

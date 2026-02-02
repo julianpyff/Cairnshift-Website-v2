@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowForward } from "../../../../components/ArrowForward";
 import { Master } from "../../../../components/Master";
+import mourikCaseImage from "../../../../../images/mourik-case.png";
+import blitsCaseImage from "../../../../../images/blits-case.jpg";
+import naextCaseImage from "../../../../../images/naext-case.jpg";
+import eleadsCaseImage from "../../../../../images/eleads-case.jpg";
 
 export const Cards = (): JSX.Element => {
   return (
@@ -30,7 +34,11 @@ export const Cards = (): JSX.Element => {
             className="no-underline"
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
-              <div className="relative self-stretch w-full h-[302px] rounded-lg bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272.svg)] bg-cover bg-[50%_50%]" />
+              <img
+                src={mourikCaseImage}
+                alt="Mourik Case Study"
+                className="relative self-stretch w-full h-[302px] rounded-lg object-cover"
+              />
 
               <div className="flex flex-col w-[360px] items-start gap-10 relative flex-[0_0_auto]">
                 <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -66,7 +74,11 @@ export const Cards = (): JSX.Element => {
             className="no-underline"
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
-              <div className="bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272-1.svg)] relative self-stretch w-full h-[302px] rounded-lg bg-cover bg-[50%_50%]" />
+              <img
+                src={blitsCaseImage}
+                alt="Blits.ai Case Study"
+                className="relative self-stretch w-full h-[302px] rounded-lg object-cover"
+              />
 
               <div className="flex flex-col w-[360px] items-start gap-10 relative flex-[0_0_auto]">
                 <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -98,15 +110,15 @@ export const Cards = (): JSX.Element => {
 
           {/* Case Study 03 - naext.ai */}
           <Link
-            to="/case-studies#case-3"
+            to="/case-studies"
             className="no-underline"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToCase(3);
-            }}
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
-              <div className="bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272-2.svg)] relative self-stretch w-full h-[302px] rounded-lg bg-cover bg-[50%_50%]" />
+              <img
+                src={naextCaseImage}
+                alt="naext.ai Case Study"
+                className="relative self-stretch w-full h-[302px] rounded-lg object-cover"
+              />
 
               <div className="flex flex-col w-[360px] items-start gap-10 relative flex-[0_0_auto]">
                 <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -138,15 +150,15 @@ export const Cards = (): JSX.Element => {
 
           {/* Case Study 04 - Eleads */}
           <Link
-            to="/case-studies#case-4"
+            to="/case-studies"
             className="no-underline"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToCase(4);
-            }}
           >
             <div className="flex flex-col w-[424px] items-center gap-8 pt-0 pb-10 px-0 relative bg-tokens-surface-primary rounded-lg overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-[1.02]">
-              <div className="bg-[url(https://c.animaapp.com/Gyeak8sQ/img/frame-2075803272-3.svg)] relative self-stretch w-full h-[302px] rounded-lg bg-cover bg-[50%_50%]" />
+              <img
+                src={eleadsCaseImage}
+                alt="Eleads Case Study"
+                className="relative self-stretch w-full h-[302px] rounded-lg object-cover"
+              />
 
               <div className="flex flex-col w-[360px] items-start gap-10 relative flex-[0_0_auto]">
                 <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">

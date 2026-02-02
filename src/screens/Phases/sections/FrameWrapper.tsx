@@ -1,8 +1,8 @@
 import { PhaseItem } from "./PhaseItem";
-import knowledgeEngineImg from "../../../assets/knowledge engine.png";
-import activationEngineImg from "../../../assets/activation engine.png";
-import revenueEngineImg from "../../../assets/revenue engine.png";
-import gtmSystemImg from "../../../assets/gtm system.png";
+import knowledgeEngineImg from "../../../assets/knowledge_engine.png";
+import activationEngineImg from "../../../assets/activation_engine.png";
+import revenueEngineImg from "../../../assets/revenue_engine.png";
+import gtmSystemImg from "../../../assets/gtm_system.png";
 
 export const FrameWrapper = (): JSX.Element => {
   return (

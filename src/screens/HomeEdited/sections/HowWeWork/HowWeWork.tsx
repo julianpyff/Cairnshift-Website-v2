@@ -123,7 +123,7 @@ export const HowWeWork = (): JSX.Element => {
           </div>
 
           <img
-            className="relative self-stretch w-[648.38px] object-cover"
+            className="relative self-stretch w-[648.38px] object-cover rounded-lg"
             alt="Rectangle"
             src="https://c.animaapp.com/Gyeak8sQ/img/rectangle-114329.svg"
           />

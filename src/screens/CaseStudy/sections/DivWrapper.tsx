@@ -29,11 +29,7 @@ export const DivWrapper = (): JSX.Element => {
       <div className="pt-0 pb-[104px] px-[60px] flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex items-start justify-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
           <div className="relative flex-1 self-stretch grow min-h-[400px] bg-[#15353c] rounded-2xl overflow-hidden">
-            <img
-              className="absolute h-[calc(100%_-_241px)] top-10 left-10 w-[50px]"
-              alt="Container"
-              src="https://c.animaapp.com/ml3rl5x5N7kIHO/img/container-1.svg"
-            />
+
 
             <div className="absolute top-[211px] left-10 w-[255px] h-20 flex items-center justify-center [font-family:'DM_Sans',Helvetica] font-medium text-[#ffffff] text-4xl tracking-[-1.00px] leading-10">
               From Heroics to Systems
