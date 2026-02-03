@@ -22,7 +22,7 @@ export const Container = (): JSX.Element => {
             </p>
 
             <div className="flex flex-col gap-1 opacity-70 [font-family:'DM_Sans',Helvetica] font-normal text-[#f3f3f3] text-sm md:text-base leading-relaxed">
-              <a href="mailto:frank@cairnshift.com" className="hover:text-white transition-colors">frank@cairnshift.com</a>
+              <a href="mailto:frank@cairnshift.com" className="text-white hover:text-[#ee9d2b] transition-colors">frank@cairnshift.com</a>
               <p>+31 6 119 118 30 | +44 73 560 70 570</p>
             </div>
           </div>

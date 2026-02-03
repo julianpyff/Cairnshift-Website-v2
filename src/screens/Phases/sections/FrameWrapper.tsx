@@ -71,7 +71,7 @@ export const FrameWrapper = (): JSX.Element => {
       <PhaseItem
         timeline="MONTH 03 - 05"
         title="Sales Execution"
-        imageTitle="Sales Execution"
+        imageTitle="Revenue Engine"
         imageSrc={revenueEngineImg}
         whatHappens={[
           {
@@ -107,7 +107,7 @@ export const FrameWrapper = (): JSX.Element => {
       <PhaseItem
         timeline="MONTH 06+"
         title="RevOps Intelligence"
-        imageTitle="RevOps Intelligence"
+        imageTitle="Combined Engines"
         imageSrc={gtmSystemImg}
         whatHappens={[
           {

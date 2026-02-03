@@ -92,7 +92,7 @@ export const PhaseItem = ({
                                 <div
                                     className="relative self-stretch w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat"
                                     style={{
-                                        backgroundImage: `linear-gradient(0deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%),url(${imageSrc}),linear-gradient(0deg,rgba(243,243,243,1) 0%,rgba(243,243,243,1) 100%)`
+                                        backgroundImage: `url(${imageSrc}),linear-gradient(0deg,rgba(243,243,243,1) 0%,rgba(243,243,243,1) 100%)`
                                     }}
                                 >
                                     <div className="absolute left-1/2 -translate-x-1/2 bottom-3 md:bottom-4 w-auto max-w-[calc(100%-32px)] bg-[#15353c] rounded-[56px] flex items-center gap-3 md:gap-4 p-2 pl-6 shadow-lg">
@@ -196,7 +196,7 @@ export const PhaseItem = ({
                                 <div
                                     className="relative self-stretch w-full h-[660px] rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat"
                                     style={{
-                                        backgroundImage: `linear-gradient(0deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%),url(${imageSrc}),linear-gradient(0deg,rgba(243,243,243,1) 0%,rgba(243,243,243,1) 100%)`
+                                        backgroundImage: `url(${imageSrc}),linear-gradient(0deg,rgba(243,243,243,1) 0%,rgba(243,243,243,1) 100%)`
                                     }}
                                 >
                                     <div className="absolute left-[calc(50%_-_292px)] bottom-4 w-[584px] h-24 bg-[#15353c] rounded-[56px]">
