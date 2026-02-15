@@ -122,10 +122,15 @@ export const Container = (): JSX.Element => {
             src="https://c.animaapp.com/Gyeak8sQ/img/group-83324530-1.png"
           />
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[#f3f3f3] opacity-60">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[#f3f3f3] opacity-60 w-full">
             <p className="[font-family:'DM_Mono',Helvetica] font-medium text-xs md:text-sm tracking-[0]">
               © 2026 CAIRNSHIFT. ALL RIGHTS RESERVED.
             </p>
+            <div className="flex items-center gap-6">
+              <Link to="/terms_conditions" className="[font-family:'DM_Mono',Helvetica] font-medium text-xs md:text-sm tracking-[0] hover:text-white transition-colors no-underline text-[#f3f3f3] hover:opacity-100">
+                TERMS & CONDITIONS
+              </Link>
+            </div>
           </div>
         </div>
       </div>

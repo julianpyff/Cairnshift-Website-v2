@@ -127,7 +127,11 @@ export const Container = (): JSX.Element => {
             <p className="[font-family:'DM_Mono',Helvetica] font-medium text-xs md:text-sm tracking-[0]">
               © 2026 CAIRNSHIFT. ALL RIGHTS RESERVED.
             </p>
-            {/* Add Privacy Policy / Terms here if needed later */}
+            <div className="flex items-center gap-6">
+              <Link to="/terms_conditions" className="[font-family:'DM_Mono',Helvetica] font-medium text-xs md:text-sm tracking-[0] hover:text-white transition-colors no-underline text-[#f3f3f3] opacity-60 hover:opacity-100">
+                TERMS & CONDITIONS
+              </Link>
+            </div>
           </div>
         </div>
       </div>

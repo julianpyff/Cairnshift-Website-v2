@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomeEdited } from "./screens/HomeEdited";
 import { Phases } from "./screens/Phases";
 import { CaseStudy } from "./screens/CaseStudy";
+import { TermsConditions } from "./screens/TermsConditions";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -15,6 +16,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/" element={<HomeEdited />} />
         <Route path="/journey" element={<Phases />} />
         <Route path="/case-studies" element={<CaseStudy />} />
+        <Route path="/terms_conditions" element={<TermsConditions />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
