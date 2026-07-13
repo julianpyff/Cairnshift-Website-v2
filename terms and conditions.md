@@ -16,13 +16,15 @@ Version: March 2026
 
 1.5 Client means the person, firm, company or other legal entity: (a) identified in a proposal or other document referencing these Terms; or (b) accepting these Terms by signing a proposal or other contractual document incorporating them; or (c) accepting these Terms electronically via the SPH’s website or other digital platform; or (d) otherwise instructing, commissioning or receiving the Services from SPH, and which includes any parent company, subsidiary, group undertaking, affiliate, agent or representative acting on its behalf in connection with the Services.
 
-For the avoidance of doubt, any individual accepting these Terms on behalf of a company or other legal entity warrants that they have authority to bind that entity, and references to the “Client” shall mean the relevant legal entity and not the individual personally (unless expressly agreed otherwise).
+For the avoidance of doubt, any individual accepting these Terms on behalf of a company or other legal entity warrants that they have authority to bind that entity, and references to the “Client” shall mean the relevant legal entity and not the individual personally (unless expressly agreed otherwise). 
 
-1.6 Proposal means the written proposal or similar commercial document issued by SPH describing the Services and applicable commercial terms which incorporates these Terms and, once mutually agreed and accepted by or on behalf of both parties, forms part of the Agreement.
+1.6 Proposal means the written proposal or similar commercial document issued by SPH describing the Services and applicable commercial terms which incorporates these Terms and, once mutually agreed and accepted by or on behalf of both parties, forms part of the Agreement. 
 
 1.7 The Client acknowledges that it has had a reasonable opportunity to review these Terms prior to accepting the Proposal and agrees that the Proposal incorporates these Terms by reference. By accepting the Proposal (whether by signature, written confirmation including email, electronic acceptance or by instructing SPH to commence the Services), the Client agrees that the Proposal together with these Terms forms the Agreement between the parties.
 
 1.8 In the event of any inconsistency between these Terms and a Proposal, the Proposal shall prevail solely in relation to the scope of Services and fees.
+
+1.9 For the avoidance of doubt, SPH is under no obligation to perform services outside the scope of the applicable Proposal and may decline to perform such services or agree to perform them subject to additional fees and/or a separate Proposal.
 
 **2. NATURE OF SERVICES**
 
@@ -99,7 +101,7 @@ The Client acknowledges that the embedded communication model may create apparen
 3. any internal authorisation failure within the Client’s organisation; or
 4. any claim by a third party arising from inaccurate or misleading information supplied by the Client.
 
-**5. CLIENT RESPONSIBILITY FOR REPRESENTATIONS**
+**5. CLIENT RESPONSIBILITIES**
 
 5.1 The Client acknowledges that any communications issued under the Client’s domain, branding or employee identity pursuant to this Agreement are made on the Client’s behalf and are legally attributable to the Client.
 
@@ -132,19 +134,59 @@ SPH shall have no obligation to independently verify the accuracy or legality of
 
 For the avoidance of doubt, this indemnity shall not apply to the extent a claim arises directly from SPH’s fraud or wilful misconduct.
 
-**6. PERFORMANCE-BASED COMPENSATION**
+5.6 The Client shall provide such information, approvals, access, materials and co-operation as SPH reasonably requires to perform the Services. SPH shall not be liable for any delay, failure or reduced performance arising from:
 
-6.1 Retainer fees (where applicable) shall be payable monthly in advance unless otherwise agreed in writing. Retainer fees are payable in consideration of SPH making its time, expertise and resources available and are non-contingent.
+(a) the Client’s failure to provide required information, approvals or access;
+(b) inaccurate or incomplete information supplied by the Client; or
+(c) any act or omission of the Client or its personnel, contractors or representatives.
 
-6.2 Where a Proposal provides for performance-based, commission or success fees (“Performance Fees”), such fees shall become due and payable upon the occurrence of the agreed trigger event specified in the applicable Proposal. Unless otherwise stated in the applicable Proposal, a trigger event shall occur where the Client, or any of its affiliates or associated entities, enters into any binding commercial arrangement (whether directly or indirectly) with a prospect introduced to, or materially facilitated by, SPH, including any affiliate or associated entity of that prospect.
+**6. PAYMENT TERMS AND COMPENSATION**
 
-This shall include any renewal, extension, variation, upsell or related commercial arrangement arising from or connected to the introduction, whether concluded during the Term or within the applicable tail period. The Client shall not structure, delay, or channel transactions to or with the purpose to avoid or reduce the Performance Fees.
+6.1 The price of the Services shall be as stated in the applicable Proposal.
 
-6.3 The Client shall maintain accurate records of transactions in relation to the Services; notify SPH promptly upon conclusion of any qualifying transaction; and provide reasonable information necessary to verify Performance Fees. For the avoidance of doubt, failure to notify SPH shall not extinguish SPH’s entitlement to payment.
+6.2 Retainer fees shall be payable monthly in arrears unless otherwise agreed in writing. Retainer fees are payable in consideration of SPH making its time, expertise and resources available and are non-contingent.
 
-6.4 Performance-based compensation is a fee mechanism only and does not create any partnership, joint venture, agency, fiduciary relationship or shared-risk arrangement between the Parties.
+6.3 Where a Proposal provides for performance-based, commission or success fees (“Performance Fees”), such fees shall become earned upon the occurrence of the applicable Trigger Event.
 
-6.5 In accordance with clause 2.5, the Client acknowledges that, the Performance Fees are contingent pricing mechanisms only, that SPH provides the Services on a reasonable endeavours basis; and that no provision of Performance Fees shall be interpreted as a guarantee of leads, revenue, conversion rates, growth or commercial success.
+The applicable Trigger Event shall be:
+(a) any trigger event expressly specified in the relevant Proposal; or
+(b) where no alternative or additional trigger event is expressly specified in the relevant Proposal, the occurrence of a legally binding commercial agreement or arrangement (whether directly or indirectly) between: (i) the Client or any of its affiliates or associated entities; and (ii) any prospect introduced to, identified by, or materially facilitated by SPH, including any affiliate or associated entity of such prospect.
+
+For the avoidance of doubt, the Trigger Event shall apply whether the relevant agreement or arrangement is entered into directly or indirectly and whether concluded by the Client, its affiliates, associated entities or nominees.
+
+For the purposes of this clause, the relevant commercial agreement or arrangement shall include any renewal, extension, variation, expansion, upsell, additional statement of work, purchase order or other revenue-generating engagement arising out of, connected with or materially related to the original introduction, identification or facilitation by SPH, whether entered into during the Term or within any applicable Tail Period. “Tail Period” means the period of twelve (12) months following the expiry or termination of the relevant Proposal or this Agreement (whichever occurs later), or such other period as may be specified in the applicable Proposal.
+
+6.4 Performance Fees shall become due and payable upon SPH issuing an invoice following the occurrence of the applicable Trigger Event. SPH shall be entitled to issue an invoice for the applicable Performance Fees once the Client, or any relevant affiliate or associated entity of the Client, issues its first invoice under the relevant commercial agreement or arrangement and, where further Performance Fees become payable in respect of any renewal, extension, variation, expansion, upsell, additional statement of work, purchase order or other revenue-generating engagement falling within clause 6.3, upon the issuance of the first invoice relating to that additional engagement.
+
+The Client shall not unreasonably delay, withhold, structure or otherwise manipulate invoicing or contractual arrangements for the purpose of avoiding, delaying or reducing Performance Fees payable to SPH.
+
+6.5 If the Client has commenced performance under the relevant commercial agreement or arrangement but has not issued an invoice within a reasonable period, SPH may invoice the applicable Performance Fees as if the Client’s invoice had been issued.
+
+6.6 The Client shall maintain accurate records of transactions in relation to the Services; notify SPH promptly upon conclusion of any qualifying transaction; and provide reasonable information necessary to verify Performance Fees. For the avoidance of doubt, failure to notify SPH shall not extinguish SPH’s entitlement to payment.
+
+6.7 Performance-based compensation is a fee mechanism only and does not create any partnership, joint venture, agency, fiduciary relationship or shared-risk arrangement between the Parties.
+
+6.8 In accordance with clause 2.5, the Client acknowledges that, the Performance Fees are contingent pricing mechanisms only, that SPH provides the Services on a reasonable endeavours basis; and that no provision of Performance Fees shall be interpreted as a guarantee of leads, revenue, conversion rates, growth or commercial success.
+
+6.9 The Client acknowledges and agrees that any Performance Fees payable under this Agreement are earned in consideration of the provision of the Services by SPH and are not contingent upon:
+(a) the Client successfully performing services for its own clients or customers;
+(b) the Client achieving any particular commercial outcome, revenue target or performance objective; or
+(c) any onward contractual performance, delivery obligation or commercial arrangement between the Client and any third party.
+
+6.10 Notwithstanding any other provision of this Agreement, the Client shall not be entitled to withhold, defer, reclaim, recover, set-off, counterclaim against, or otherwise reduce any Performance Fees paid or payable to SPH by reason of:
+(a) any failure, delay or deficiency in the Client’s performance of its own services;
+(b) any dispute, claim, refund request, chargeback, loss or liability arising between the Client and any of its clients, customers or counterparties; or
+(c) any alleged failure by the Client to realise anticipated commercial benefits, revenues, opportunities or outcomes arising from the Services.
+
+For the avoidance of doubt, once a Performance Fee trigger event has occurred in accordance with clause 6.3, the relevant Performance Fee shall be deemed fully earned and non-refundable, save in the case of SPH’s fraud or wilful misconduct.
+
+6.11 Unless otherwise stated in the applicable Proposal:
+(a) all invoices issued by SPH shall be payable within fourteen (14) days of the invoice date;
+(b) all fees are stated exclusive of VAT and any applicable taxes, which shall be payable by the Client in addition;
+(c) the Client shall make payment in full without deduction, withholding, set-off or counterclaim;
+(d) if any amount remains unpaid after the due date, SPH may charge interest in accordance with the Late Payment of Commercial Debts (Interest) Act 1998 together with all reasonable costs of recovery;
+(e) SPH may suspend performance of the Services on written notice where any undisputed invoice remains unpaid beyond its due date; and
+(f) suspension of the Services for non-payment shall not relieve the Client of its obligation to pay fees properly due under the Agreement.
 
 **7. CRM ACCESS & SYSTEM INTEGRATION**
 
@@ -178,20 +220,20 @@ SPH shall not be responsible for verifying data accuracy or legality.
 
 8.4 The Client acknowledges that AI-generated outputs:
 
-1. are probabilistic in nature;
+1. are probabilistic in nature; 
 2. such outputs are assistive tools intended to support, not replace, human judgement; and
 3. outputs may contain inaccuracies, omissions or unintended bias.
 
 SPH does not warrant that AI-generated content will be error-free, complete, fit for purpose or compliant with any specific regulatory framework.
 
-Furthermore, the Client acknowledges that AI and automation technologies are evolving technologies and are provided on a reasonable endeavours basis only.
+Furthermore, the Client acknowledges that AI and automation technologies are evolving technologies and are provided on a reasonable endeavours basis only. 
 
 8.5 SPH does not guarantee uninterrupted operation, specific performance improvements, predictive accuracy or commercial outcomes arising from their use.
 
-8.6 The Client remains responsible for
+8.6 The Client remains responsible for:
 
-1. reviewing and approving AI-assisted communications prior to binding commercial commitments;
-2. ensuring that all final representations, claims and contractual terms are accurate and compliant; and
+1. reviewing and approving AI-assisted communications prior to binding commercial commitments; 
+2. ensuring that all final representations, claims and contractual terms are accurate and compliant; and 
 3. determining the suitability of AI-assisted outputs for its specific regulatory or industry context (where applicable).
 
 8.7 SPH shall not be liable for:
@@ -203,7 +245,7 @@ Furthermore, the Client acknowledges that AI and automation technologies are evo
 
 Use of third-party tools is subject to the relevant provider’s terms and technical limitations.
 
-8.8 SPH may develop, refine and improve its AI methodologies, models, workflows, prompts, analytics engines and automation frameworks during the course of providing the Services.
+8.8 SPH may develop, refine and improve its AI methodologies, models, workflows, prompts, analytics engines and automation frameworks during the course of providing the Services. 
 
 8.9 All intellectual property in such developments shall remain the exclusive property of SPH.
 
@@ -265,9 +307,9 @@ Nothing in this clause shall exclude liability for fraud, fraudulent misrepresen
 2. fraud or fraudulent misrepresentation; or
 3. any other liability which cannot lawfully be limited or excluded.
 
-12.2 Subject always to clause 12.1, SPH shall be not liable to the other for any type of special, indirect or consequential loss including any loss of profit.
+12.2 Subject always to clause 12.1, neither party shall be liable to the other for any type of special, indirect or consequential loss including any loss of profit.
 
-12.3 Subject to clause 12.1 and 12.2, neither party shall be liable liability to the Client whether in contract or tort (including negligence), for breach of statutory duty, or otherwise, arising under or in connection with the Services and/or the provision of the Services under these Terms or an Agreement shall not exceed 100% (one hundred percent) of the total amounts paid or payable by the Client to SPH in the twelve (12) months preceding the event giving rise to the claim.
+12.3 Subject to clause 12.1 and 12.2, SPH’s liability to Client whether in contract or tort (including negligence), for breach of statutory duty, or otherwise, arising under or in connection with the Services and/or the provision of the Services under these Terms or an Agreement shall not exceed 100% (one hundred percent) of the total amounts paid or payable by the Client to SPH in the twelve (12) months preceding the event giving rise to the claim.
 
 12.4 No claim may be brought more than twelve (12) months after the date on which the Client became aware, or ought reasonably to have become aware, of the circumstances giving rise to the claim.
 
@@ -286,37 +328,29 @@ Nothing in this clause shall exclude liability for fraud, fraudulent misrepresen
 
 **14. INTELLECTUAL PROPERTY**
 
-14.1 SPH Background and Developed IP
+**14.1 SPH background and developed IP**
 
 All intellectual property rights in and to:
-
 (a) SPH’s methodologies, playbooks, automation systems, GTM frameworks, templates, AI prompt structures, workflows, analytics models and know-how;
-
 (b) any software, tools, scripts, systems or materials developed or used by SPH in connection with the Services; and
-
 (c) any enhancements, modifications, derivative works or improvements thereto,
 
 (together, “SPH Materials”) shall remain the exclusive property of SPH.
 
 Nothing in this Agreement transfers ownership of SPH Materials to the Client.
 
-14.2 Licence to Client
+**14.2 Licence to Client**
 
 Subject to full payment of all fees due, SPH grants the Client a non-exclusive, non-transferable, non-sublicensable licence to use deliverables provided under the Services solely for the Client’s internal business purposes.
 
 The Client shall not:
-
 (a) copy, reproduce or distribute SPH Materials except as expressly permitted;
-
 (b) modify or create derivative works from SPH Materials;
-
 (c) reverse engineer or attempt to extract underlying methodologies;
-
 (d) use SPH Materials to develop competing services; and/or
-
 (e) provide SPH Materials to third parties without SPH’s prior written consent.
 
-14.3 Client Materials
+**14.3 Client Materials**
 
 All intellectual property rights in materials supplied by the Client remain the property of the Client.
 
@@ -324,11 +358,11 @@ The Client grants SPH a non-exclusive licence to use such materials solely for t
 
 The Client warrants that it has all necessary rights to provide such materials and that their use will not infringe third-party rights.
 
-14.4 Data and Learnings
+**14.4 Data and Learnings**
 
 SPH may use aggregated, anonymised and non-confidential data, insights and learnings derived from the provision of the Services for internal development, benchmarking, improvement of methodologies and AI training, provided that no Client Confidential Information is disclosed.
 
-14.5 Reservation of Rights
+**14.5 Reservation of Rights**
 
 All rights not expressly granted are reserved to SPH.
 
@@ -346,7 +380,7 @@ This clause shall survive termination of the Services for five (5) years, and in
 
 **16. TERM AND TERMINATION**
 
-16.1 Term
+**16.1 Term**
 
 The Agreement shall commence on the earlier of (a) signature or written acceptance by the parties of a Proposal incorporating these Terms or (b) SPH commencing the Services.
 
@@ -356,26 +390,19 @@ At the expiry of the Initial Term, unless either party gives written notice of t
 
 Following the Initial Term, either party may terminate the Agreement by giving not less than one (1) month’s written notice, such notice to expire at the end of the applicable Renewal Term.
 
-16.2 Termination for Cause
+**16.2 Termination for Cause**
 
 Either party may terminate the Agreement immediately by written notice if the other party:
-
 (a) commits a material breach which, if capable of remedy, is not remedied within fourteen (14) days of written notice;
-
 (b) becomes insolvent or enters any insolvency or similar proceedings; or
-
 (c) ceases or threatens to cease trading.
 
-16.3 Consequences of Termination
+**16.3 Consequences of Termination**
 
 Upon termination:
-
 (a) all accrued fees shall become immediately due and payable;
-
 (b) SPH shall remain entitled to any Performance Fees arising from introductions or activities undertaken prior to termination in accordance with the applicable Proposal;
-
 (c) the Client shall cease use of SPH materials or tools except as expressly permitted; and
-
 (d) provisions intended to survive termination shall remain in force.
 
 Termination shall not affect accrued rights or remedies.
@@ -390,13 +417,13 @@ This clause does not apply to hires resulting from a general recruitment adverti
 
 **18. FORCE MAJEURE**
 
-SPH shall not be liable for any failure or delay in performing its obligations to the extent caused by events beyond its reasonable control, including without limitation acts of God, governmental actions, war, civil unrest, labour disputes, cyber incidents, telecommunications failures, SaaS or third-party platform outages, supply chain disruption or interruption of utilities (“Force Majeure Event”).
+SPH shall not be liable for any failure or delay in performing its obligations to the extent caused by events beyond its reasonable control, including without limitation acts of God, governmental actions, war, civil unrest, labour disputes, cyber incidents, cyber attacks, cloud provider outages, AI provide outages, CRM outages, telecommunications failures, SaaS or third-party platform outages, supply chain disruption or interruption of utilities (“Force Majeure Event”).
 
 SPH’s obligations shall be suspended for the duration of the Force Majeure Event. If the Force Majeure Event continues for more than sixty (60) days, either party may terminate the affected Services on written notice.
 
 Nothing in this clause limits the Client’s obligation to pay fees properly due.
 
-**19. GOVERNING LAW**
+**19. MISCELLANEOUS**
 
 19.1 These Terms and any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with it or its subject matter shall be governed by and construed in accordance with Scots law.
 
@@ -404,7 +431,7 @@ The courts of Scotland shall have exclusive jurisdiction to settle any such disp
 
 19.2 No variation of these Conditions shall be effective unless expressly stipulated and agreed in writing.
 
-19.3 SPH may amend these Terms from time to time by publishing an updated version on its website. Any such amendments shall apply only to Proposals entered into after the date of publication, unless otherwise agreed in writing.
+19.3 SPH serves the right, without prior warning, unilaterally to amend from time to time any of the provisions of these Terms in a manner it may deem necessary and shall publish them on its website. Amended versions of these Terms shall apply to Proposals and or additional works as agreed under a Proposal issued, on and after the date of publication of the relevant amended Terms or (if earlier) the date that the amended version of the Terms is notified to the Client. 
 
 19.4 The Proposal and these Terms constitute the entire agreement between the parties in relation to the Services and supersede all prior discussions, proposals and representations.
 
@@ -417,3 +444,11 @@ The courts of Scotland shall have exclusive jurisdiction to settle any such disp
 SPH may assign or transfer its rights and obligations to any affiliate or successor in connection with a corporate reorganisation, merger or sale of business.
 
 19.8 A failure or delay by SPH in exercising any right under a Proposal or these Terms shall not constitute a waiver of that right.
+
+19.9 Unless expressly agreed otherwise in writing, the Services are provided on a non-exclusive basis. Nothing in this Agreement shall prevent SPH from providing services similar or identical to the Services to any other person, including competitors of the Client, provided that SPH continues to comply with its confidentiality obligations under this Agreement.
+
+19.20 The Client acknowledges that SPH is not required to dedicate any minimum level of time, personnel or resources exclusively to the Client except to the extent expressly agreed in writing.
+
+19.21 Unless otherwise agreed in writing, SPH may identify the Client as a client of SPH in its marketing materials, credentials, investor materials, website, pitches and client lists, and may use the Client’s name, trade mark and logo solely for such purposes.
+
+19.22 Except as expressly set out, all warranties, representations and conditions implied by statute or common law are excluded to the fullest extent permitted by law.
